@@ -4,7 +4,7 @@ import logo from '../logo.svg';
 function Home() {
 
   return (
-    <div>
+    <div className='App'>
       <div>I'm Home</div>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
