@@ -13,7 +13,7 @@ function App() {
         <NavBar />
         <Switch>
           <Route exact path='/'>
-            Home
+            <Home />
           </Route>
         </Switch>
         <img src={logo} className="App-logo" alt="logo" />
