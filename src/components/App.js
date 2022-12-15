@@ -1,6 +1,7 @@
 import React from 'react'
 import NavBar from './NavBar'
 import Home from './Home'
+import {Route, Switch} from 'react-router-dom'
 
 import logo from '../logo.svg';
 import '../App.css';
@@ -10,7 +11,11 @@ function App() {
     <div className="App">
       <header className="App-header">
         <NavBar />
-        <Home />
+        <Switch>
+          <Route exact path='/'>
+            Home
+          </Route>
+        </Switch>
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
