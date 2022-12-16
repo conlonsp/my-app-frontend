@@ -11,6 +11,9 @@ function App() {
     <div className="App-header">
       <NavBar />
       <Switch>
+        <Route path='/find'>
+          <FindHome />
+        </Route>
         <Route exact path='/'>
           <Home />
         </Route>
