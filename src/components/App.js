@@ -4,6 +4,7 @@ import Home from './Home'
 import FindHome from './FindHome'
 import {Route, Switch} from 'react-router-dom'
 import '../App.css';
+import ListHome from './ListHome'
 
 
 
@@ -12,6 +13,9 @@ function App() {
     <div className="App-header">
       <NavBar />
       <Switch>
+        <Route path='/list'>
+          <ListHome />
+        </Route>
         <Route path='/find'>
           <FindHome />
         </Route>
