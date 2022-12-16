@@ -9,6 +9,9 @@ function NavBar() {
       <NavLink to='/' exact>
         Home
       </NavLink>
+      <NavLink to='/find' exact>
+        Find a Home
+      </NavLink>
     </div>
   )
 }
