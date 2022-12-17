@@ -1,13 +1,12 @@
 import React from 'react'
+import {Route, Switch} from 'react-router-dom'
+
 import NavBar from './NavBar'
 import Home from './Home'
 import FindHome from './FindHome'
-import ListHome from './ListHome'
-import {Route, Switch} from 'react-router-dom'
+import ListHome from './ListingsContainer'
+
 import '../App.css';
-import ListHome from './ListHome'
-
-
 
 function App() {
   return (
