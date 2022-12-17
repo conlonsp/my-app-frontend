@@ -1,10 +1,19 @@
 import React from 'react'
-import logo from '../logo.svg';
+// import logo from '../logo.svg';
 
-function Home() {
+function Header() {
 
   return (
-    <div className='Home'>
+    <div>
+      Header
+    </div>
+  )
+}
+
+export default Header
+
+
+{/* <div className='Home'>
       <div>I'm Home</div>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -20,8 +29,4 @@ function Home() {
           Learn React
         </a>
       </header>
-    </div>
-  )
-}
-
-export default Home
+    </div> */}
