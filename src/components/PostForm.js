@@ -1,12 +1,12 @@
 import React from 'react'
 
-function FindHome() {
+function PostForm() {
 
   return (
     <div>
-      Find a Home
+      Post a Listing
     </div>
   )
 }
 
-export default FindHome
+export default PostForm

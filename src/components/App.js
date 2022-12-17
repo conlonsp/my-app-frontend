@@ -3,7 +3,7 @@ import {Route, Switch} from 'react-router-dom'
 
 import NavBar from './NavBar'
 import Home from './Header'
-import FindHome from './FindHome'
+import FindHome from './PostForm'
 import ListHome from './ListingsContainer'
 
 import '../App.css';
