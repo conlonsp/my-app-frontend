@@ -5,7 +5,12 @@ function ListingsContainer({homes}) {
 
   return (
     <div>
-      
+      {homes.map(home => {
+        <Listing 
+          id={home.id}
+          address={home.address}
+        />
+      })}
     </div>
   )
 }
