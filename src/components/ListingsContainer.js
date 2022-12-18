@@ -1,9 +1,12 @@
 import React from 'react'
+import Listing from './Listing'
 
-function ListingsContainer() {
+function ListingsContainer({homes}) {
 
   return (
-    <div>Listings</div>
+    <div>
+      
+    </div>
   )
 }
 
