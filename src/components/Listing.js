@@ -1,10 +1,10 @@
 import React from 'react'
 
-function Listing() {
+function Listing({ address }) {
 
   return (
     <div>
-      Listing
+      {address}
     </div>
   )
 }
