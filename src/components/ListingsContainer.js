@@ -8,7 +8,7 @@ function ListingsContainer({ homes }) {
     <div>
       {homes.map(home => {
         return (
-          <Listing key={home.id} address={home.address}/>
+          <Listing key={home.id} home={home}/>
         )
       })}
     </div>
