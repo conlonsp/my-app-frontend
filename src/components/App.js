@@ -10,7 +10,7 @@ function App() {
   const [homes, setHomes] = useState([])
 
   useEffect(() => {
-    fetch("http://localhost:9392/homes")
+    fetch("http://localhost:9492/homes")
     .then(r => r.json())
     .then(data => setHomes(data))
   }, [])
