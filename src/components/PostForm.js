@@ -30,6 +30,7 @@ function PostForm() {
           name='agent_id'
           placeholder='ex: 7'
         />
+        <button>Submit</button>
       </form>
     </div>
   )
