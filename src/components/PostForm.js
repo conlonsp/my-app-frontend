@@ -4,13 +4,13 @@ function PostForm() {
 
   return (
     <div>
-      Post a Listing
+      <h2>Post a Listing</h2>
       <form>
         <label>Address: </label>
         <input
           type='text'
           name='address'
-          placeholder='123 Street St, Town, ST, 12345'
+          placeholder='ex: 123 Street St, Town, ST, 12345'
         />
         <label>Price: </label>
         <input
@@ -29,6 +29,34 @@ function PostForm() {
           type='text'
           name='agent_id'
           placeholder='ex: 7'
+        />
+        <button>Submit</button>
+      </form>
+      <h2>Register an Agent</h2>
+      <form>
+        <label>Agent Name: </label>
+        <input
+          type='text'
+          name='name'
+          placeholder='ex: Joe Shmoe'
+        />
+        <label>Brokerage: </label>
+        <input
+          type='text'
+          name='brokerage'
+          placeholder='ex: Brokerage Real Estate'
+        />
+        <label>Email: </label>
+        <input
+          type='text'
+          name='email'
+          placeholder='ex: email@email.com'
+        />
+        <label>Phone #: </label>
+        <input
+          type='text'
+          name='phone_number'
+          placeholder='ex: 1112223333'
         />
         <button>Submit</button>
       </form>
