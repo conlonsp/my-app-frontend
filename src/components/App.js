@@ -3,6 +3,7 @@ import React, {useState, useEffect} from 'react'
 import Header from './Header'
 import PostForm from './PostForm'
 import ListingsContainer from './ListingsContainer'
+import AgentsContainer from './AgentsContainer'
 
 import '../App.css';
 
@@ -26,7 +27,8 @@ function App() {
     <div className="App-header">
       <Header />
       <PostForm />
-      <ListingsContainer homes={homes}/>
+      <ListingsContainer homes={homes} />
+      <AgentsContainer agents={agents} />
     </div>
   );
 }
