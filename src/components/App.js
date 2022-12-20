@@ -8,11 +8,18 @@ import '../App.css';
 
 function App() {
   const [homes, setHomes] = useState([])
+  const [agents, setAgents] = useState([])
 
   useEffect(() => {
     fetch("http://localhost:9492/homes")
     .then(r => r.json())
     .then(data => setHomes(data))
+  }, [])
+
+  useEffect(() => {
+    fetch("http://localhost:9492/agents")
+    .then(r => r.json())
+    .then(data => setAgents(data))
   }, [])
   
   return (
