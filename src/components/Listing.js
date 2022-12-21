@@ -2,14 +2,18 @@ import React from 'react'
 
 function Listing({ home }) {
 
-  const { address, price, square_feet, agent_id, created_at, updated_at } = home
+  const { id, address, price, square_feet, agent_id, created_at, updated_at } = home
 
   function handleDelete() {
     alert('do you want to delete?')
+    fetch(`http://localhost:9492/homes/${id}`, {
+      method: 'DELETE',
+    })
+    
   }
 
   function handleUpdate() {
-    alert('do you want to update')
+    alert('do you want to update?')
   }
 
   return (
