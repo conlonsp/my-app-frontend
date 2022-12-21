@@ -6,6 +6,8 @@ function Agent({ agent }) {
   return (
     <div>
       {name} | ID #: {id}
+      <button>Update</button>
+      <button>Delete</button>
     </div>
   )
 }
