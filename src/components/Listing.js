@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Listing({ home }) {
+function Listing({ home, onHomeDelete }) {
 
   const { id, address, price, square_feet, agent_id, created_at, updated_at } = home
 
@@ -9,7 +9,7 @@ function Listing({ home }) {
     fetch(`http://localhost:9492/homes/${id}`, {
       method: 'DELETE',
     })
-    
+    onHomeDelete(id)
   }
 
   function handleUpdate() {
