@@ -9,8 +9,12 @@ function PostForm() {
   })
 
   function handleChange(event) {
-    event.preventDefault()
-    console.log(event.target.value)
+    // console.log(event.target.name)
+    // console.log(event.target.value)
+    setNewListing({
+      ...newListing,
+      [event.target.name]: event.target.value
+    })
   }
 
   return (
