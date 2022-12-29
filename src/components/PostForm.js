@@ -1,6 +1,17 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 function PostForm() {
+  const [newListing, setNewListing] = useState({
+    address: '',
+    price: '',
+    square_feet: '',
+    agent_id: '',
+  })
+
+  function handleChange(event) {
+    event.preventDefault()
+    console.log(event.target.value)
+  }
 
   return (
     <div>
@@ -11,6 +22,7 @@ function PostForm() {
           type='text'
           name='address'
           placeholder='ex: 123 Street St, Town, ST, 12345'
+          onChange={handleChange}
         />
         <label>Price: </label>
         <input
