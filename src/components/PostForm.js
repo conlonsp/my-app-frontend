@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 
 function PostForm() {
-  const [newListing, setNewListing] = useState({
+  const [createListing, setCreateListing] = useState({
     address: '',
     price: '',
     square_feet: '',
@@ -11,10 +11,29 @@ function PostForm() {
   function handleChange(event) {
     // console.log(event.target.name)
     // console.log(event.target.value)
-    setNewListing({
-      ...newListing,
+    setCreateListing({
+      ...createListing,
       [event.target.name]: event.target.value
     })
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault()
+    const newListing = {
+      address: createListing.address,
+      price: createListing.price,
+      square_feet: createListing.square_feet,
+      agent_id: createListing.agent_id,
+    }
+    fetch("http://localhost:9492/homes"), {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(newListing)
+    }
+    .then(r => r.json())
+    .then(data =>)
   }
 
   return (
@@ -26,6 +45,7 @@ function PostForm() {
           type='text'
           name='address'
           placeholder='ex: 123 Street St, Town, ST, 12345'
+          value={createListing.address}
           onChange={handleChange}
         />
         <label>Price: </label>
@@ -33,18 +53,24 @@ function PostForm() {
           type='text'
           name='price'
           placeholder='ex: 50000'
+          value={createListing.price}
+          onChange={handleChange}
         />
         <label>Square Feet: </label>
         <input
           type='text'
           name='square_feet'
           placeholder='ex: 250'
+          value={createListing.square_feet}
+          onChange={handleChange}
         />
         <label>Agent ID #: </label>
         <input
           type='text'
           name='agent_id'
           placeholder='ex: 7'
+          value={createListing.agent_id}
+          onChange={handleChange}
         />
         <button>Submit</button>
       </form>
