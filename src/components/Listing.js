@@ -1,7 +1,13 @@
 import React, { useState } from 'react'
 
-function Listing({ home, onHomeDelete }) {
+function Listing({ home, onHomeDelete, homes, setHomes }) {
   const [isUpdate, setIsUpdate] = useState(false)
+  const [updatedHome, setUpdatedHome] = useState({
+    address: '',
+    price: '',
+    square_feet: '',
+    agent_id: '',
+  })
 
   const { id, address, price, square_feet, agent_id, created_at, updated_at } = home
 
@@ -15,6 +21,10 @@ function Listing({ home, onHomeDelete }) {
 
   function handleUpdateButton() {
     setIsUpdate(!isUpdate)
+  }
+
+  function handleChange(event) {
+    console.log(event.target.name)
   }
 
   return (
@@ -33,6 +43,7 @@ function Listing({ home, onHomeDelete }) {
               type='text'
               name='address'
               placeholder={home.address}
+              onChange={handleChange}
             />
             <label>Price: </label>
             <input
