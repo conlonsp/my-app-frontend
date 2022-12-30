@@ -31,7 +31,7 @@ function App() {
   return (
     <div className="App-header">
       <Header />
-      <PostForm setHomes={setHomes}/>
+      <PostForm homes={homes} setHomes={setHomes} />
       <ListingsContainer homes={homes} onHomeDelete={handleHomeDelete} />
       <AgentsContainer agents={agents} />
     </div>
