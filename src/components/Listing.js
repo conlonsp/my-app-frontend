@@ -27,7 +27,33 @@ function Listing({ home, onHomeDelete }) {
         {!isUpdate ?
           <button onClick={handleUpdateButton}>Update</button>
           :
-          <h2>Hi!</h2>
+          <form>
+            <label>Address: </label>
+            <input
+              type='text'
+              name='address'
+              placeholder={home.address}
+            />
+            <label>Price: </label>
+            <input
+              type='text'
+              name='price'
+              placeholder={home.price}
+            />
+            <label>Square Feet: </label>
+            <input
+              type='text'
+              name='square_feet'
+              placeholder={home.square_feet}
+            />
+            <label>Agent ID #: </label>
+            <input
+              type='text'
+              name='agent_id'
+              placeholder={home.agent_id}
+            />
+            <button>Submit</button>
+          </form>
         }
         <button onClick={handleDelete}>Delete</button>
       </div>
