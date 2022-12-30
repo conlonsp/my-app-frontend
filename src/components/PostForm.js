@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-function PostForm() {
+function PostForm({ setHomes }) {
   const [createListing, setCreateListing] = useState({
     address: '',
     price: '',
