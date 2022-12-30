@@ -14,7 +14,7 @@ function Listing({ home, onHomeDelete }) {
   }
 
   function handleUpdateButton() {
-    
+    setIsUpdate(!isUpdate)
   }
 
   return (
@@ -24,7 +24,11 @@ function Listing({ home, onHomeDelete }) {
         {address} | Price: ${price} | Square Feet: {square_feet}
         <br/>
         Listed on: {created_at}
-        <button onClick={handleUpdateButton}>Update</button>
+        {!isUpdate ?
+          <button onClick={handleUpdateButton}>Update</button>
+          :
+          <h2>Hi!</h2>
+        }
         <button onClick={handleDelete}>Delete</button>
       </div>
     </div>
