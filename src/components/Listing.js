@@ -1,15 +1,15 @@
 import React, { useState } from 'react'
 
-function Listing({ home, onHomeDelete, homes, setHomes }) {
+function Listing({ home, onHomeDelete, onUpdateHome }) {
+  const { id, address, price, square_feet, agent_id, created_at, updated_at } = home
+
   const [isUpdate, setIsUpdate] = useState(false)
   const [updatedHome, setUpdatedHome] = useState({
-    address: '',
-    price: '',
-    square_feet: '',
-    agent_id: '',
+    address: address,
+    price: price,
+    square_feet: square_feet,
+    agent_id: agent_id,
   })
-
-  const { id, address, price, square_feet, agent_id, created_at, updated_at } = home
 
   function handleDelete() {
     alert('do you want to delete?')
@@ -30,6 +30,31 @@ function Listing({ home, onHomeDelete, homes, setHomes }) {
     })
   }
 
+  function handleUpdateSubmit(event) {
+    event.preventDefault()
+    const newUpdate = {
+      address: updatedHome.address,
+      price: updatedHome.price,
+      square_feet: updatedHome.square_feet,
+      agent_id: updatedHome.agent_id,
+    }
+    fetch(`http://localhost:9492/homes/${id}`, {
+      method: 'PATCH',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newUpdate)
+    })
+    .then(r => r.json())
+    .then(data => onUpdateHome(data))
+    setUpdatedHome({
+      address: updatedHome.address,
+      price: updatedHome.price,
+      square_feet: updatedHome.square_feet,
+      agent_id: updatedHome.agent_id,
+    })
+  }
+
   return (
     <div>
       <br/>
@@ -40,14 +65,14 @@ function Listing({ home, onHomeDelete, homes, setHomes }) {
         {!isUpdate ?
           <button onClick={handleUpdateButton}>Update</button>
           :
-          <form>
+          <form onSubmit={handleUpdateSubmit}>
             <label>Address: </label>
             <input
               type='text'
               name='address'
               placeholder={address}
               onChange={handleChange}
-              value={updatedHome.address || address}
+              value={updatedHome.address}
             />
             <label>Price: </label>
             <input
@@ -55,7 +80,7 @@ function Listing({ home, onHomeDelete, homes, setHomes }) {
               name='price'
               placeholder={price}
               onChange={handleChange}
-              value={updatedHome.price || price}
+              value={updatedHome.price}
             />
             <label>Square Feet: </label>
             <input
@@ -63,7 +88,7 @@ function Listing({ home, onHomeDelete, homes, setHomes }) {
               name='square_feet'
               placeholder={square_feet}
               onChange={handleChange}
-              value={updatedHome.square_feet || square_feet}
+              value={updatedHome.square_feet}
             />
             <label>Agent ID #: </label>
             <input
@@ -71,7 +96,7 @@ function Listing({ home, onHomeDelete, homes, setHomes }) {
               name='agent_id'
               placeholder={agent_id}
               onChange={handleChange}
-              value={updatedHome.agent_id || agent_id}
+              value={updatedHome.agent_id}
             />
             <button>Submit</button>
           </form>
