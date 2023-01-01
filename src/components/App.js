@@ -22,7 +22,16 @@ function App() {
     .then(r => r.json())
     .then(data => setAgents(data))
   }, [])
+
+  useEffect(() => {
+    fetch("http://localhost:9492/appointments")
+    .then(r => r.json())
+    .then(data => setAppointments(data))
+  }, [])
   
+  const findHome = homes.find(home => home.id === 40)
+  console.log(findHome.appointments.time)
+
   return (
     <div className="App-header">
       <Header />
