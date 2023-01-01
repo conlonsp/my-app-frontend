@@ -24,7 +24,10 @@ function Listing({ home, onHomeDelete, homes, setHomes }) {
   }
 
   function handleChange(event) {
-    console.log(event.target.name)
+    setUpdatedHome({
+      ...updatedHome,
+      [event.target.name]: event.target.value
+    })
   }
 
   return (
@@ -42,26 +45,33 @@ function Listing({ home, onHomeDelete, homes, setHomes }) {
             <input
               type='text'
               name='address'
-              placeholder={home.address}
+              placeholder={address}
               onChange={handleChange}
+              value={updatedHome.address || address}
             />
             <label>Price: </label>
             <input
               type='text'
               name='price'
-              placeholder={home.price}
+              placeholder={price}
+              onChange={handleChange}
+              value={updatedHome.price || price}
             />
             <label>Square Feet: </label>
             <input
               type='text'
               name='square_feet'
-              placeholder={home.square_feet}
+              placeholder={square_feet}
+              onChange={handleChange}
+              value={updatedHome.square_feet || square_feet}
             />
             <label>Agent ID #: </label>
             <input
               type='text'
               name='agent_id'
-              placeholder={home.agent_id}
+              placeholder={agent_id}
+              onChange={handleChange}
+              value={updatedHome.agent_id || agent_id}
             />
             <button>Submit</button>
           </form>
