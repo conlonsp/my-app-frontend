@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function Listing({ home, onHomeDelete, onUpdateHome }) {
+function Listing({ home, onHomeDelete, onUpdateHome, appointments }) {
   const { id, address, price, square_feet, agent_id, created_at, updated_at } = home
 
   const [isUpdate, setIsUpdate] = useState(false)

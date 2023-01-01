@@ -30,6 +30,7 @@ function ListingsContainer({ homes, setHomes, appointments }) {
             homes={homes}
             setHomes={setHomes}
             onUpdateHome={handleUpdateHome}
+            appointments={appointments}
           />
         )
       })}
