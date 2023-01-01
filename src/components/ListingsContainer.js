@@ -1,7 +1,7 @@
 import React from 'react'
 import Listing from './Listing'
 
-function ListingsContainer({ homes, setHomes  }) {
+function ListingsContainer({ homes, setHomes, appointments }) {
   
   function handleUpdateHome(updatedHomeObj) {
     const updatedHomes = homes.map(home => {

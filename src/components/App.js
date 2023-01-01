@@ -10,6 +10,7 @@ import '../App.css';
 function App() {
   const [homes, setHomes] = useState([])
   const [agents, setAgents] = useState([])
+  const [appointments, setAppointments] = useState([])
 
   useEffect(() => {
     fetch("http://localhost:9492/homes")
@@ -29,8 +30,11 @@ function App() {
     .then(data => setAppointments(data))
   }, [])
   
-  const findHome = homes.find(home => home.id === 40)
-  console.log(findHome.appointments.time)
+  // const findHome = homes.find(home => home.id === 40)
+  // console.log(findHome)
+  // const findAppointmentForHome = appointments.find(appointment => appointment.home_id === findHome.id)
+
+  // console.log(findAppointmentForHome)
 
   return (
     <div className="App-header">
@@ -39,6 +43,7 @@ function App() {
       <ListingsContainer
         homes={homes}
         setHomes={setHomes}
+        appointments={appointments}
       />
       <AgentsContainer agents={agents} />
     </div>
