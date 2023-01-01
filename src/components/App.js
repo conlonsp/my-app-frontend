@@ -22,11 +22,6 @@ function App() {
     .then(r => r.json())
     .then(data => setAgents(data))
   }, [])
-
-  function handleHomeDelete(id) {
-    const updatedHomes = homes.filter(home => home.id !== id)
-    setHomes(updatedHomes)
-  } 
   
   return (
     <div className="App-header">
@@ -35,7 +30,6 @@ function App() {
       <ListingsContainer
         homes={homes}
         setHomes={setHomes}
-        onHomeDelete={handleHomeDelete}
       />
       <AgentsContainer agents={agents} />
     </div>
