@@ -1,7 +1,7 @@
 import React from 'react'
 import Listing from './Listing'
 
-function ListingsContainer({ homes, setHomes, appointments }) {
+function ListingsContainer({ homes, setHomes }) {
   
   function handleUpdateHome(updatedHomeObj) {
     const updatedHomes = homes.map(home => {
@@ -30,7 +30,6 @@ function ListingsContainer({ homes, setHomes, appointments }) {
             homes={homes}
             setHomes={setHomes}
             onUpdateHome={handleUpdateHome}
-            appointments={appointments}
           />
         )
       })}

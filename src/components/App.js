@@ -40,7 +40,7 @@ function App() {
         setHomes={setHomes}
         appointments={appointments}
       />
-      <AppointmentContainer />
+      <AppointmentContainer appointments={appointments}/>
       <AgentsContainer agents={agents} />
     </div>
   );

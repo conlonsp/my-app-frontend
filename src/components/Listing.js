@@ -1,10 +1,8 @@
 import React, { useState } from 'react'
-import Appointment from './Appointment'
+// import Appointment from './Appointment'
 
 function Listing({ home, onHomeDelete, onUpdateHome }) {
   const { id, address, price, square_feet, agent_id, created_at, updated_at, appointments } = home
-
-  console.log(appointments)
 
   const [isUpdate, setIsUpdate] = useState(false)
   const [updatedHome, setUpdatedHome] = useState({
@@ -106,7 +104,7 @@ function Listing({ home, onHomeDelete, onUpdateHome }) {
         }
         <button onClick={handleDelete}>Delete</button>
       </div>
-      <h2>Appointments:</h2>
+      {/* <h2>Appointments:</h2>
       {appointments.map(appt => {
         return (
           <Appointment 
@@ -114,7 +112,7 @@ function Listing({ home, onHomeDelete, onUpdateHome }) {
             appt={appt}
           />
         )
-      })} 
+      })}  */}
     </div>
   )
 }
