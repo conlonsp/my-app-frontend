@@ -23,7 +23,7 @@ function AppointmentPostForm({ appointments, setAppointments }) {
       home_id: createAppointment.home_id,
       agent_id: createAppointment.agent_id
     }
-    fetch("http://localhost:9492/agents", {
+    fetch("http://localhost:9492/appointments", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -43,30 +43,38 @@ function AppointmentPostForm({ appointments, setAppointments }) {
   return (
     <div>
       <h2>Schedule an Appointment</h2>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label>Your Name: </label>
         <input
           type='text'
           name='scheduler'
           placeholder='ex: Joe Shmoe'
+          onChange={handleChange}
+          value={createAppointment.scheduler}
         />
         <label>Date/Time: </label>
         <input
           type='text'
           name='time'
           placeholder='ex: January 01, 2023 06:31'
+          onChange={handleChange}
+          value={createAppointment.time}
         />
         <label>Home ID: </label>
         <input
           type='text'
           name='home_id'
           placeholder='ex: 7'
+          onChange={handleChange}
+          value={createAppointment.home_id}
         />
         <label>Agent ID: </label>
         <input
           type='text'
           name='agent_id'
           placeholder='ex: 13'
+          onChange={handleChange}
+          value={createAppointment.agent_id}
         />
         <button>Submit</button>
       </form>
