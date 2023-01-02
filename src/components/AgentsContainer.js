@@ -1,7 +1,7 @@
 import React from 'react'
 import Agent from './Agent'
 
-function AgentsContainer({ agents }) {
+function AgentsContainer({ agents, setAgents }) {
 
   return (
     <div>
