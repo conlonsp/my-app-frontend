@@ -8,6 +8,13 @@ function AppointmentPostForm({ appointments, setAppointments }) {
     agent_id: '',
   })
 
+  function handleChange(event) {
+    setCreateAppointment({
+      ...createAppointment,
+      [event.target.name]: event.target.value,
+    })
+  }
+
   return (
     <div>
       <h2>Schedule an Appointment</h2>
