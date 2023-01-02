@@ -32,35 +32,49 @@ function AgentPostForm({ agents, setAgents }) {
     })
     .then(r => r.json())
     .then(data => setAgents([...agents, data]))
+    setCreateAgent({
+      name: '',
+      brokerage: '',
+      email: '',
+      phone_number: '',
+    })
   }
 
   return (
     <div>
       <h2>Register an Agent</h2>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label>Agent Name: </label>
         <input
           type='text'
           name='name'
           placeholder='ex: Joe Shmoe'
+          onChange={handleChange}
+          value={createAgent.name}
         />
         <label>Brokerage: </label>
         <input
           type='text'
           name='brokerage'
           placeholder='ex: Brokerage Real Estate'
+          onChange={handleChange}
+          value={createAgent.brokerage}
         />
         <label>Email: </label>
         <input
           type='text'
           name='email'
           placeholder='ex: email@email.com'
+          onChange={handleChange}
+          value={createAgent.email}
         />
         <label>Phone #: </label>
         <input
           type='text'
           name='phone_number'
           placeholder='ex: 1112223333'
+          onChange={handleChange}
+          value={createAgent.phone_number}
         />
         <button>Submit</button>
       </form>
