@@ -1,9 +1,13 @@
 import React from 'react'
 
-function Appointment() {
+function Appointment({ appt }) {
+
+  const {scheduler, time} = appt
 
   return (
-    <h2>You have an appointment</h2>
+    <div>
+      {scheduler} at {time}
+    </div>
   )
 }
 
