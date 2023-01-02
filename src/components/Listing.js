@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-// import Appointment from './Appointment'
 
 function Listing({ home, onHomeDelete, onUpdateHome }) {
   const { id, address, price, square_feet, agent_id, created_at, updated_at, appointments } = home
@@ -61,57 +60,52 @@ function Listing({ home, onHomeDelete, onUpdateHome }) {
       <div>
         {address} | Price: ${price} | Square Feet: {square_feet}
         <br/>
-        Listed on: {created_at}
+        Updated: {updated_at}
         {!isUpdate ?
           <button onClick={handleUpdateButton}>Update</button>
           :
-          <form onSubmit={handleUpdateSubmit}>
-            <label>Address: </label>
-            <input
-              type='text'
-              name='address'
-              placeholder={address}
-              onChange={handleChange}
-              value={updatedHome.address}
-            />
-            <label>Price: </label>
-            <input
-              type='text'
-              name='price'
-              placeholder={price}
-              onChange={handleChange}
-              value={updatedHome.price}
-            />
-            <label>Square Feet: </label>
-            <input
-              type='text'
-              name='square_feet'
-              placeholder={square_feet}
-              onChange={handleChange}
-              value={updatedHome.square_feet}
-            />
-            <label>Agent ID #: </label>
-            <input
-              type='text'
-              name='agent_id'
-              placeholder={agent_id}
-              onChange={handleChange}
-              value={updatedHome.agent_id}
-            />
-            <button>Submit</button>
-          </form>
+          <div>
+            <form onSubmit={handleUpdateSubmit}>
+              <label>Address: </label>
+              <input
+                type='text'
+                name='address'
+                placeholder={address}
+                onChange={handleChange}
+                value={updatedHome.address}
+              />
+              <label>Price: </label>
+              <input
+                type='text'
+                name='price'
+                placeholder={price}
+                onChange={handleChange}
+                value={updatedHome.price}
+              />
+              <label>Square Feet: </label>
+              <input
+                type='text'
+                name='square_feet'
+                placeholder={square_feet}
+                onChange={handleChange}
+                value={updatedHome.square_feet}
+              />
+              <label>Agent ID #: </label>
+              <input
+                type='text'
+                name='agent_id'
+                placeholder={agent_id}
+                onChange={handleChange}
+                value={updatedHome.agent_id}
+              />
+              <button>Submit</button>
+            </form>
+            <button onClick={handleUpdateButton}>Hide</button>
+          </div>
+
         }
         <button onClick={handleDelete}>Delete</button>
       </div>
-      {/* <h2>Appointments:</h2>
-      {appointments.map(appt => {
-        return (
-          <Appointment 
-            key={appt.id}
-            appt={appt}
-          />
-        )
-      })}  */}
     </div>
   )
 }
