@@ -1,6 +1,12 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 function AppointmentPostForm({ appointments, setAppointments }) {
+  const [createAppointment, setCreateAppointment] = useState({
+    scheduler: '',
+    time: '',
+    home_id: '',
+    agent_id: '',
+  })
 
   return (
     <div>
@@ -9,7 +15,7 @@ function AppointmentPostForm({ appointments, setAppointments }) {
         <label>Your Name: </label>
         <input
           type='text'
-          name='name'
+          name='scheduler'
           placeholder='ex: Joe Shmoe'
         />
         <label>Date/Time: </label>
