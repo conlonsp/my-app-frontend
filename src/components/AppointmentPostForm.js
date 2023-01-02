@@ -1,6 +1,6 @@
 import React from 'react'
 
-function AppointmentPostForm() {
+function AppointmentPostForm({ appointments, setAppointments }) {
 
   return (
     <div>

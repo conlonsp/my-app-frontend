@@ -38,7 +38,10 @@ function App() {
       <Header />
       <ListingPostForm homes={homes} setHomes={setHomes} />
       <AgentPostForm agents={agents} setAgents={setAgents} />
-      <AppointmentPostForm />
+      <AppointmentPostForm
+        appointments={appointments}
+        setAppointments={setAppointments}
+      />
       <ListingsContainer
         homes={homes}
         setHomes={setHomes}
