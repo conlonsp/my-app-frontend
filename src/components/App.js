@@ -4,6 +4,7 @@ import Header from './Header'
 import PostForm from './PostForm'
 import ListingsContainer from './ListingsContainer'
 import AgentsContainer from './AgentsContainer'
+import AppointmentContainer from './AppointmentContainer'
 
 import '../App.css';
 
@@ -39,6 +40,7 @@ function App() {
         setHomes={setHomes}
         appointments={appointments}
       />
+      <AppointmentContainer />
       <AgentsContainer agents={agents} />
     </div>
   );
