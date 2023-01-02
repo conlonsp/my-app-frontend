@@ -7,6 +7,7 @@ import AgentsContainer from './AgentsContainer'
 import AppointmentContainer from './AppointmentContainer'
 
 import '../App.css';
+import AgentPostForm from './AgentPostForm'
 
 function App() {
   const [homes, setHomes] = useState([])
@@ -35,6 +36,7 @@ function App() {
     <div className="App-header">
       <Header />
       <ListingPostForm homes={homes} setHomes={setHomes} />
+      <AgentPostForm />
       <ListingsContainer
         homes={homes}
         setHomes={setHomes}

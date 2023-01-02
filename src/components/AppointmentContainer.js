@@ -7,7 +7,7 @@ function AppointmentContainer({ appointments, homes }) {
     <div>
       {appointments.map(appt => {
       return (
-        <Appointment key={appt.id} appt={appt} homes={homes}/>
+        <Appointment key={appt.id} appt={appt} homes={homes} />
       )
     })}
     </div>
