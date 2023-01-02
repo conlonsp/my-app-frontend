@@ -9,7 +9,10 @@ function AgentPostForm({ agents, setAgents }) {
   })
 
   function handleChange(event) {
-    
+    setCreateAgent({
+      ...createAgent,
+      [event.target.name]: event.target.value
+    })
   }
 
   return (
