@@ -2,7 +2,7 @@ import React from 'react'
 import Agent from './Agent'
 
 function AgentsContainer({ agents }) {
-  console.log(agents)
+
   return (
     <div>
       {agents.map(agent => {
