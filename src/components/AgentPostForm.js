@@ -1,6 +1,12 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 function AgentPostForm({ agents, setAgents }) {
+  const [createAgent, setCreateAgent] = useState({
+    name: '',
+    brokerage: '',
+    email: '',
+    phone_number: '',
+  })
 
   function handleChange(event) {
     
