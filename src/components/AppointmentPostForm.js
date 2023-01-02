@@ -15,6 +15,31 @@ function AppointmentPostForm({ appointments, setAppointments }) {
     })
   }
 
+  function handleSubmit(event) {
+    event.preventDefault()
+    const newAppt = {
+      scheduler: createAppointment.scheduler,
+      time: createAppointment.time,
+      home_id: createAppointment.home_id,
+      agent_id: createAppointment.agent_id
+    }
+    fetch("http://localhost:9492/agents", {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newAppt)
+    })
+    .then(r => r.json())
+    .then(data => setAppointments([...appointments, data]))
+    setCreateAppointment({
+      scheduler: '',
+      time: '',
+      home_id: '',
+      agent_id: '',
+    })
+  }
+
   return (
     <div>
       <h2>Schedule an Appointment</h2>
