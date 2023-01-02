@@ -1,7 +1,7 @@
 import React from 'react'
 import Appointment from './Appointment'
 
-function AppointmentContainer({ appointments }) {
+function AppointmentContainer({ appointments, homes }) {
 
   return (
     <div>
