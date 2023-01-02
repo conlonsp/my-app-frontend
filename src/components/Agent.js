@@ -13,7 +13,6 @@ function Agent({ agent, onAgentDelete }) {
   return (
     <div>
       {name} | ID #: {id}
-      <button>Update</button>
       <button onClick={handleDelete}>Delete</button>
     </div>
   )
