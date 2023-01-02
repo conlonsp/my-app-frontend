@@ -106,7 +106,15 @@ function Listing({ home, onHomeDelete, onUpdateHome }) {
         }
         <button onClick={handleDelete}>Delete</button>
       </div>
-      {appointments.map(appt => <Appointment />)} 
+      <h2>Appointments:</h2>
+      {appointments.map(appt => {
+        return (
+          <Appointment 
+            key={appt.id}
+            appt={appt}
+          />
+        )
+      })} 
     </div>
   )
 }
