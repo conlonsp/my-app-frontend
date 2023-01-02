@@ -2,7 +2,7 @@ import React from 'react'
 
 function Appointment({ appt, homes }) {
 
-  const {id, scheduler, time, home_id} = appt
+  const { scheduler, time, home_id } = appt
 
   const findHomeByAppt = homes.find(home => home.id === home_id)
 

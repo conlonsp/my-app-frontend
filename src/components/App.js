@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react'
 
 import Header from './Header'
-import PostForm from './PostForm'
+import ListingPostForm from './ListingPostForm'
 import ListingsContainer from './ListingsContainer'
 import AgentsContainer from './AgentsContainer'
 import AppointmentContainer from './AppointmentContainer'
@@ -34,7 +34,7 @@ function App() {
   return (
     <div className="App-header">
       <Header />
-      <PostForm homes={homes} setHomes={setHomes} />
+      <ListingPostForm homes={homes} setHomes={setHomes} />
       <ListingsContainer
         homes={homes}
         setHomes={setHomes}
