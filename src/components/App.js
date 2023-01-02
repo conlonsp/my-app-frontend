@@ -29,12 +29,6 @@ function App() {
     .then(r => r.json())
     .then(data => setAppointments(data))
   }, [])
-  
-  // const findHome = homes.find(home => home.id === 40)
-  // console.log(findHome)
-  // const findAppointmentForHome = appointments.find(appointment => appointment.home_id === findHome.id)
-
-  // console.log(findAppointmentForHome)
 
   return (
     <div className="App-header">
