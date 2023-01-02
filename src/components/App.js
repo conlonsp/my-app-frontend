@@ -5,9 +5,10 @@ import ListingPostForm from './ListingPostForm'
 import ListingsContainer from './ListingsContainer'
 import AgentsContainer from './AgentsContainer'
 import AppointmentContainer from './AppointmentContainer'
+import AgentPostForm from './AgentPostForm'
+import AppointmentPostForm from './AppointmentPostForm'
 
 import '../App.css';
-import AgentPostForm from './AgentPostForm'
 
 function App() {
   const [homes, setHomes] = useState([])
@@ -36,7 +37,8 @@ function App() {
     <div className="App-header">
       <Header />
       <ListingPostForm homes={homes} setHomes={setHomes} />
-      <AgentPostForm />
+      <AgentPostForm agents={agents} setAgents={setAgents} />
+      <AppointmentPostForm />
       <ListingsContainer
         homes={homes}
         setHomes={setHomes}

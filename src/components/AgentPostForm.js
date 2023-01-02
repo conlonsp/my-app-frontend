@@ -1,6 +1,10 @@
 import React from 'react'
 
-function AgentPostForm() {
+function AgentPostForm({ agents, setAgents }) {
+
+  function handleChange(event) {
+    
+  }
 
   return (
     <div>
