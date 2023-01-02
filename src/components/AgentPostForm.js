@@ -15,6 +15,25 @@ function AgentPostForm({ agents, setAgents }) {
     })
   }
 
+  function handleSubmit(event) {
+    event.preventDefault()
+    const newAgent = {
+      name: createAgent.name,
+      brokerage: createAgent.brokerage,
+      email: createAgent.email,
+      phone_number: createAgent.phone_number,
+    }
+    fetch("http://localhost:9492/agents", {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newAgent)
+    })
+    .then(r => r.json())
+    .then(data => setAgents([...agents, data]))
+  }
+
   return (
     <div>
       <h2>Register an Agent</h2>
