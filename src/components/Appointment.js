@@ -14,7 +14,10 @@ function Appointment({ appt, homes, onApptDelete }) {
 
   return (
     <div>
-      {scheduler} at {time} at {findHomeAddress}
+      <h4>Appointment for:</h4>
+      {scheduler} at {time}
+      <br/>
+      {findHomeAddress}
       <button onClick={handleDelete}>Delete</button>
     </div>
 
