@@ -13,7 +13,6 @@ function Listing({ home, onHomeDelete, onUpdateHome }) {
   })
 
   function handleDelete() {
-    alert('do you want to delete?')
     fetch(`http://localhost:9492/homes/${id}`, {
       method: 'DELETE',
     })
