@@ -58,6 +58,8 @@ function Listing({ home, onHomeDelete, onUpdateHome }) {
     <div>
       <br/>
       <div>
+        House ID: {id}
+        <br/>
         {address} | Price: ${price} | Square Feet: {square_feet}
         <br/>
         Updated: {updated_at}
