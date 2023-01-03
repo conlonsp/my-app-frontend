@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 
 function AgentPostForm({ agents, setAgents }) {
+  const [showForm, setShowForm] = useState(false)
   const [createAgent, setCreateAgent] = useState({
     name: '',
     brokerage: '',
@@ -40,44 +41,55 @@ function AgentPostForm({ agents, setAgents }) {
     })
   }
 
+  function handleShowForm() {
+    setShowForm(!showForm)
+  }
+
   return (
     <div>
-      <h2>Register an Agent</h2>
-      <form onSubmit={handleSubmit}>
-        <label>Agent Name: </label>
-        <input
-          type='text'
-          name='name'
-          placeholder='ex: Joe Shmoe'
-          onChange={handleChange}
-          value={createAgent.name}
-        />
-        <label>Brokerage: </label>
-        <input
-          type='text'
-          name='brokerage'
-          placeholder='ex: Brokerage Real Estate'
-          onChange={handleChange}
-          value={createAgent.brokerage}
-        />
-        <label>Email: </label>
-        <input
-          type='text'
-          name='email'
-          placeholder='ex: email@email.com'
-          onChange={handleChange}
-          value={createAgent.email}
-        />
-        <label>Phone #: </label>
-        <input
-          type='text'
-          name='phone_number'
-          placeholder='ex: 1112223333'
-          onChange={handleChange}
-          value={createAgent.phone_number}
-        />
-        <button>Submit</button>
-      </form>
+      {!showForm ?
+        <button onClick={handleShowForm}>Register Agent</button>
+        :
+        <div>
+          <h2>Register an Agent</h2>
+          <form onSubmit={handleSubmit}>
+            <label>Agent Name: </label>
+            <input
+              type='text'
+              name='name'
+              placeholder='ex: Joe Shmoe'
+              onChange={handleChange}
+              value={createAgent.name}
+            />
+            <label>Brokerage: </label>
+            <input
+              type='text'
+              name='brokerage'
+              placeholder='ex: Brokerage Real Estate'
+              onChange={handleChange}
+              value={createAgent.brokerage}
+            />
+            <label>Email: </label>
+            <input
+              type='text'
+              name='email'
+              placeholder='ex: email@email.com'
+              onChange={handleChange}
+              value={createAgent.email}
+            />
+            <label>Phone #: </label>
+            <input
+              type='text'
+              name='phone_number'
+              placeholder='ex: 1112223333'
+              onChange={handleChange}
+              value={createAgent.phone_number}
+            />
+            <button>Submit</button>
+          </form>
+          <button onClick={handleShowForm}>Hide</button>
+        </div>
+      }
     </div>
   )
 }
