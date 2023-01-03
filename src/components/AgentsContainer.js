@@ -9,7 +9,8 @@ function AgentsContainer({ agents, setAgents }) {
   }
 
   return (
-    <div>
+    <div className='item4'>
+      <h2>Agents</h2>
       {agents.map(agent => {
         return (
           <Agent key={agent.id} agent={agent} onAgentDelete={handleAgentDelete} />

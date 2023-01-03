@@ -12,8 +12,14 @@ function Agent({ agent, onAgentDelete }) {
 
   return (
     <div>
-      {name} | ID #: {id}
+      <h3>ID: {id}</h3>
+      {name} with {brokerage}
+      <br/>
+      Email: {email}
+      <br/>
+      Phone: {phone_number}
       <button onClick={handleDelete}>Delete</button>
+      <br/>
     </div>
   )
 }

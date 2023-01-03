@@ -40,7 +40,7 @@ function ListingPostForm({ homes, setHomes }) {
   }
 
   return (
-    <div>
+    <div className='item6'>
       {!showForm ?
       <button onClick={handleShowForm}>Post Listing</button>
       :

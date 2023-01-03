@@ -9,7 +9,8 @@ function AppointmentContainer({ appointments, setAppointments, homes }) {
   }
 
   return (
-    <div>
+    <div className='item2'>
+      <h2>Appointments</h2>
       {appointments.map(appt => {
       return (
         <Appointment key={appt.id} appt={appt} homes={homes} onApptDelete={handleDeleteAppt}/>

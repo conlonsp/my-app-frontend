@@ -46,7 +46,7 @@ function AppointmentPostForm({ appointments, setAppointments }) {
   }
 
   return (
-    <div>
+    <div className='item5'>
       {!showForm ?
         <button onClick={handleShowForm}>Schedule Appt</button>
         :

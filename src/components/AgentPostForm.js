@@ -46,7 +46,7 @@ function AgentPostForm({ agents, setAgents }) {
   }
 
   return (
-    <div>
+    <div className='item7'>
       {!showForm ?
         <button onClick={handleShowForm}>Register Agent</button>
         :

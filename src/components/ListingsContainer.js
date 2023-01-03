@@ -20,7 +20,8 @@ function ListingsContainer({ homes, setHomes }) {
   }
 
   return (
-    <div>
+    <div className='item3'>
+      <h2>Listings</h2>
       {homes.map(home => {
         return (
           <Listing

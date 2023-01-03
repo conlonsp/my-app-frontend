@@ -34,7 +34,7 @@ function App() {
   }, [])
 
   return (
-    <div className="App-header">
+    <div className="grid-container">
       <Header />
       <ListingPostForm homes={homes} setHomes={setHomes} />
       <AgentPostForm agents={agents} setAgents={setAgents} />

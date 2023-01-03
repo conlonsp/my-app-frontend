@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,30 @@
   to {
     transform: rotate(360deg);
   }
+} */
+
+.item1 { grid-area: header; }
+.item2 { grid-area: left; }
+.item3 { grid-area: main; }
+.item4 { grid-area: right; }
+.item5 { grid-area: footer1; }
+.item6 { grid-area: footer2; }
+.item7 { grid-area: footer3; }
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'left main main main main right'
+    'footer1 footer1 footer2 footer2 footer3 footer3';
+  gap: 5px;
+  background-color: darkslategray;
+  padding: 10px;
+}
+
+.grid-container > div {
+  background-color: slategray;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
 }

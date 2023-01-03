@@ -53,12 +53,13 @@ function Listing({ home, onHomeDelete, onUpdateHome }) {
       agent_id: updatedHome.agent_id,
     })
   }
+  console.log(home)
 
   return (
     <div>
       <br/>
       <div>
-        House ID: {id}
+        <h3>House ID: {id}</h3>
         <br/>
         {address} | Price: ${price} | Square Feet: {square_feet}
         <br/>
