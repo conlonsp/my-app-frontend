@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import {Route, Switch} from 'react-router-dom'
 
 import Header from './Header'
 import ListingPostForm from './ListingPostForm'
@@ -36,7 +37,20 @@ function App() {
   return (
     <div className="grid-container">
       <Header />
-      <ListingPostForm homes={homes} setHomes={setHomes} />
+      <NavBar />
+      <Switch>
+        <Route path='/listings'>
+          <ListingsContainer
+            homes={homes}
+            setHomes={setHomes}
+            appointments={appointments}
+          />
+        </Route>
+        <Route path='/agents'>
+          <AgentsContainer agents={agents} setAgents={setAgents} />
+        </Route>
+      </Switch>
+      {/* <ListingPostForm homes={homes} setHomes={setHomes} />
       <AgentPostForm agents={agents} setAgents={setAgents} />
       <AppointmentPostForm
         appointments={appointments}
@@ -52,7 +66,7 @@ function App() {
         setAppointments={setAppointments}
         homes={homes}
       />
-      <AgentsContainer agents={agents} setAgents={setAgents} />
+      <AgentsContainer agents={agents} setAgents={setAgents} /> */}
     </div>
   );
 }
