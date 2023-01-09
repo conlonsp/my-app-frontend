@@ -1,14 +1,14 @@
 import React, { useState } from 'react'
 
 function Listing({ home, onHomeDelete, onUpdateHome }) {
-  const { id, address, price, square_feet, agent_id, created_at, updated_at, appointments } = home
+  const { id, address, price, square_feet, image_url, } = home
 
   const [isUpdate, setIsUpdate] = useState(false)
   const [updatedHome, setUpdatedHome] = useState({
     address: address,
     price: price,
     square_feet: square_feet,
-    agent_id: agent_id,
+    image_url: image_url
   })
 
   function handleDelete() {
@@ -35,7 +35,7 @@ function Listing({ home, onHomeDelete, onUpdateHome }) {
       address: updatedHome.address,
       price: updatedHome.price,
       square_feet: updatedHome.square_feet,
-      agent_id: updatedHome.agent_id,
+      image_url: updatedHome.image_url,
     }
     fetch(`http://localhost:9492/homes/${id}`, {
       method: 'PATCH',
@@ -50,7 +50,7 @@ function Listing({ home, onHomeDelete, onUpdateHome }) {
       address: updatedHome.address,
       price: updatedHome.price,
       square_feet: updatedHome.square_feet,
-      agent_id: updatedHome.agent_id,
+      image_url: updatedHome.image_url,
     })
   }
   console.log(home)
@@ -59,11 +59,9 @@ function Listing({ home, onHomeDelete, onUpdateHome }) {
     <div>
       <br/>
       <div>
-        <h3>House ID: {id}</h3>
-        <br/>
+        <img src={image_url} width="320" height="240"/>
         {address} | Price: ${price} | Square Feet: {square_feet}
         <br/>
-        Updated: {updated_at}
         {!isUpdate ?
           <button onClick={handleUpdateButton}>Update</button>
           :
@@ -93,13 +91,13 @@ function Listing({ home, onHomeDelete, onUpdateHome }) {
                 onChange={handleChange}
                 value={updatedHome.square_feet}
               />
-              <label>Agent ID #: </label>
+              <label>Image URL: </label>
               <input
                 type='text'
-                name='agent_id'
-                placeholder={agent_id}
+                name='image_url'
+                placeholder={image_url}
                 onChange={handleChange}
-                value={updatedHome.agent_id}
+                value={updatedHome.image_url}
               />
               <button>Submit</button>
             </form>
