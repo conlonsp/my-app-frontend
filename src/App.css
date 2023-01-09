@@ -35,7 +35,7 @@
   to {
     transform: rotate(360deg);
   }
-} */
+}
 
 .item1 { grid-area: header; }
 .item2 { grid-area: left; }
@@ -61,4 +61,4 @@
   text-align: center;
   padding: 20px 0;
   font-size: 30px;
-}
+} */

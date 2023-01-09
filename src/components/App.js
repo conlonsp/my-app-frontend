@@ -9,6 +9,7 @@ import AppointmentContainer from './AppointmentContainer'
 import AgentPostForm from './AgentPostForm'
 import AppointmentPostForm from './AppointmentPostForm'
 
+
 import '../App.css';
 
 function App() {
@@ -37,7 +38,7 @@ function App() {
   return (
     <div className="grid-container">
       <Header />
-      <NavBar />
+      
       <Switch>
         <Route path='/listings'>
           <ListingsContainer

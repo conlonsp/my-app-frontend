@@ -1,4 +1,5 @@
 import React from 'react'
+import NavBar from './NavBar'
 
 function Header() {
 
@@ -10,6 +11,7 @@ function Header() {
       <div>
         <h4>A Brokerage Platform</h4>
       </div>
+      <NavBar />
     </div>
   )
 }
