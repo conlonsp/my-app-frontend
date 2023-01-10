@@ -5,6 +5,7 @@ import AppointmentPostForm from './AppointmentPostForm'
 function Listing({ home, onHomeDelete, onUpdateHome, appointments, setAppointments, agents }) {
   const { id, address, price, square_feet, image_url, } = home
 
+  const [isClicked, setIsClicked] = useState(false)
   const [isUpdate, setIsUpdate] = useState(false)
   const [updatedHome, setUpdatedHome] = useState({
     address: address,
@@ -31,6 +32,8 @@ function Listing({ home, onHomeDelete, onUpdateHome, appointments, setAppointmen
       [event.target.name]: event.target.value
     })
   }
+
+  
 
   function handleUpdateSubmit(event) {
     event.preventDefault()
