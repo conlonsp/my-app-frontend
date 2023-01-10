@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react'
 import {Route, Switch} from 'react-router-dom'
 
 import Header from './Header'
-import ListingPostForm from './ListingPostForm'
 import ListingsContainer from './ListingsContainer'
 import AgentsContainer from './AgentsContainer'
 import AppointmentContainer from './AppointmentContainer'
@@ -50,7 +49,7 @@ function App() {
           <AgentsContainer agents={agents} setAgents={setAgents} />
         </Route>
       </Switch>
-      {/* <ListingPostForm homes={homes} setHomes={setHomes} />
+      {/* 
       <AgentPostForm agents={agents} setAgents={setAgents} />
       <AppointmentPostForm
         appointments={appointments}

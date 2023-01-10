@@ -1,5 +1,6 @@
 import React from 'react'
 import Listing from './Listing'
+import ListingPostForm from './ListingPostForm'
 
 function ListingsContainer({ homes, setHomes }) {
   
@@ -34,6 +35,7 @@ function ListingsContainer({ homes, setHomes }) {
           />
         )
       })}
+      <ListingPostForm homes={homes} setHomes={setHomes} />
     </div>
   )
 }
