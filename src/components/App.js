@@ -5,8 +5,6 @@ import Header from './Header'
 import ListingsContainer from './ListingsContainer'
 import AgentsContainer from './AgentsContainer'
 import AppointmentContainer from './AppointmentContainer'
-import AgentPostForm from './AgentPostForm'
-
 
 import '../App.css';
 
@@ -19,7 +17,7 @@ function App() {
     fetch("http://localhost:9492/homes")
     .then(r => r.json())
     .then(data => setHomes(data))
-  }, [appointments])
+  }, [appointments, homes])
 
   useEffect(() => {
     fetch("http://localhost:9492/agents")
