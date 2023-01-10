@@ -5,6 +5,9 @@ function NavBar() {
 
   return (
     <div>
+      <NavLink to='/' exact>
+        Home
+      </NavLink>
       <NavLink to='/listings'>
         Listings
       </NavLink>
