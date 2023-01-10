@@ -38,7 +38,6 @@ function App() {
   return (
     <div className="grid-container">
       <Header />
-      
       <Switch>
         <Route path='/listings'>
           <ListingsContainer

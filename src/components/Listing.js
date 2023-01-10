@@ -62,6 +62,18 @@ function Listing({ home, onHomeDelete, onUpdateHome }) {
         <img src={image_url} width="320" height="240"/>
         {address} | Price: ${price} | Square Feet: {square_feet}
         <br/>
+        Appointments: 
+        {home.appointments.length > 0 ?
+          home.appointments.map(appt => {
+            return (
+              <li>
+                {appt.scheduler} | {appt.time}
+              </li>
+            )
+          })
+          :
+          "No Appointments Scheduled"
+        }
         {!isUpdate ?
           <button onClick={handleUpdateButton}>Update</button>
           :
