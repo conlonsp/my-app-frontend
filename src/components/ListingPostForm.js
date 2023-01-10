@@ -6,7 +6,7 @@ function ListingPostForm({ homes, setHomes }) {
     address: '',
     price: '',
     square_feet: '',
-    agent_id: '',
+    image_url: '',
   })
 
   function handleShowForm() {
@@ -26,7 +26,7 @@ function ListingPostForm({ homes, setHomes }) {
       address: createListing.address,
       price: createListing.price,
       square_feet: createListing.square_feet,
-      agent_id: createListing.agent_id,
+      image_url: createListing.image_url,
     }
     fetch("http://localhost:9492/homes", {
       method: 'POST',
@@ -71,12 +71,12 @@ function ListingPostForm({ homes, setHomes }) {
             value={createListing.square_feet}
             onChange={handleChange}
           />
-          <label>Agent ID #: </label>
+          <label>Image URL: </label>
           <input
             type='text'
-            name='agent_id'
+            name='image_url'
             placeholder='ex: 7'
-            value={createListing.agent_id}
+            value={createListing.image_url}
             onChange={handleChange}
           />
           <button>Submit</button>
