@@ -12,6 +12,7 @@ function Listing({ home, onHomeDelete, onUpdateHome, appointments, setAppointmen
     square_feet: square_feet,
     image_url: image_url
   })
+  
 
   function handleDelete() {
     fetch(`http://localhost:9492/homes/${id}`, {
@@ -67,7 +68,7 @@ function Listing({ home, onHomeDelete, onUpdateHome, appointments, setAppointmen
         {home.appointments.length > 0 ?
           home.appointments.map(appt => {
             return (
-              <li>
+              <li key={appt.id}>
                 {appt.scheduler} | {appt.time}
               </li>
             )
@@ -121,6 +122,7 @@ function Listing({ home, onHomeDelete, onUpdateHome, appointments, setAppointmen
         <button onClick={handleDelete}>Delete</button>
       </div>
       <AppointmentPostForm
+        key={home.id}
         home={home}
         appointments={appointments}
         setAppointments={setAppointments}

@@ -6,11 +6,11 @@ function AppointmentPostForm({ appointments, setAppointments, home, agents }) {
     scheduler: '',
     time: '',
     home_id: home.id,
-    agent_id: '',
+    agent_id: 1,
   })
-  console.log(home)
+  //console.log(home)
 
-  function handleChange(event) {
+  function handleInputChange(event) {
     setCreateAppointment({
       ...createAppointment,
       [event.target.name]: event.target.value,
@@ -37,9 +37,10 @@ function AppointmentPostForm({ appointments, setAppointments, home, agents }) {
     setCreateAppointment({
       scheduler: '',
       time: '',
-      home_id: '',
-      agent_id: '',
+      home_id: home.id,
+      agent_id: 1,
     })
+    console.log(home.appointments)
   }
 
   function handleShowForm() {
@@ -59,7 +60,7 @@ function AppointmentPostForm({ appointments, setAppointments, home, agents }) {
               type='text'
               name='scheduler'
               placeholder='ex: Joe Shmoe'
-              onChange={handleChange}
+              onChange={handleInputChange}
               value={createAppointment.scheduler}
             />
             <label>Date/Time: </label>
@@ -67,20 +68,19 @@ function AppointmentPostForm({ appointments, setAppointments, home, agents }) {
               type='text'
               name='time'
               placeholder='ex: January 01, 2023 06:31'
-              onChange={handleChange}
+              onChange={handleInputChange}
               value={createAppointment.time}
             />
             <label>Agent: </label>
-            <select>
-
+            <select name='agent_id' onChange={handleInputChange}>
+              {agents.map(agent => {
+                return (
+                  <option key={agent.id} value={agent.id}>
+                    {agent.name}
+                  </option>
+                )
+              })}
             </select>
-            {/* <input
-              type='text'
-              name='agent_id'
-              placeholder='ex: 13'
-              onChange={handleChange}
-              value={createAppointment.agent_id}
-            /> */}
             <button>Submit</button>
           </form>
           <button onClick={handleShowForm}>Hide</button>

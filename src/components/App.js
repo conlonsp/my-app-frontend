@@ -19,7 +19,7 @@ function App() {
     fetch("http://localhost:9492/homes")
     .then(r => r.json())
     .then(data => setHomes(data))
-  }, [])
+  }, [appointments])
 
   useEffect(() => {
     fetch("http://localhost:9492/agents")
