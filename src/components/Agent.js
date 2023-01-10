@@ -12,6 +12,10 @@ function Agent({ agent, onAgentDelete }) {
     onAgentDelete(id)
   }
 
+  function handleClick() {
+    setIsClicked(!isClicked)
+  }
+
   return (
     <div>
       {name} with {brokerage}
