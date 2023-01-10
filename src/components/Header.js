@@ -4,7 +4,7 @@ import NavBar from './NavBar'
 function Header() {
 
   return (
-    <div className='item1'>
+    <div className='App-header'>
       <div>
         <h3>Homies</h3>
       </div>

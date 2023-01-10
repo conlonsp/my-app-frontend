@@ -62,7 +62,7 @@ function Listing({ home, onHomeDelete, onUpdateHome, appointments, setAppointmen
   }
 
   return (
-    <div>
+    <div className='listing-div'>
       <br/>
       <div>
         <img onClick={handleClick} src={image_url} width="320" height="240"/>
