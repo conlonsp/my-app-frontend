@@ -53,7 +53,6 @@ function Listing({ home, onHomeDelete, onUpdateHome }) {
       image_url: updatedHome.image_url,
     })
   }
-  console.log(home)
 
   return (
     <div>
