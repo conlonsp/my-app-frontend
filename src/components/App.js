@@ -4,6 +4,7 @@ import {Route, Switch} from 'react-router-dom'
 import Header from './Header'
 import ListingsContainer from './ListingsContainer'
 import AgentsContainer from './AgentsContainer'
+import Home from './Home'
 import AppointmentContainer from './AppointmentContainer'
 
 import '../App.css';
@@ -46,6 +47,9 @@ function App() {
         </Route>
         <Route path='/agents'>
           <AgentsContainer agents={agents} setAgents={setAgents} />
+        </Route>
+        <Route exact path='/'>
+          <Home />
         </Route>
       </Switch>
       {/* 
