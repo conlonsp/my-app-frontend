@@ -6,7 +6,6 @@ import ListingsContainer from './ListingsContainer'
 import AgentsContainer from './AgentsContainer'
 import AppointmentContainer from './AppointmentContainer'
 import AgentPostForm from './AgentPostForm'
-import AppointmentPostForm from './AppointmentPostForm'
 
 
 import '../App.css';
@@ -51,15 +50,7 @@ function App() {
       </Switch>
       {/* 
       <AgentPostForm agents={agents} setAgents={setAgents} />
-      <AppointmentPostForm
-        appointments={appointments}
-        setAppointments={setAppointments}
-      />
-      <ListingsContainer
-        homes={homes}
-        setHomes={setHomes}
-        appointments={appointments}
-      />
+      
       <AppointmentContainer
         appointments={appointments}
         setAppointments={setAppointments}

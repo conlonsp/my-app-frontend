@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import AppointmentPostForm from './AppointmentPostForm'
+
 
 function Listing({ home, onHomeDelete, onUpdateHome }) {
   const { id, address, price, square_feet, image_url, } = home
@@ -118,6 +120,10 @@ function Listing({ home, onHomeDelete, onUpdateHome }) {
         }
         <button onClick={handleDelete}>Delete</button>
       </div>
+      <AppointmentPostForm
+        // appointments={appointments}
+        // setAppointments={setAppointments}
+      />
     </div>
   )
 }
