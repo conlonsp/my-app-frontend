@@ -14,7 +14,6 @@ function Listing({ home, onHomeDelete, onUpdateHome, appointments, setAppointmen
     image_url: image_url
   })
   
-
   function handleDelete() {
     fetch(`http://localhost:9492/homes/${id}`, {
       method: 'DELETE',
@@ -33,7 +32,9 @@ function Listing({ home, onHomeDelete, onUpdateHome, appointments, setAppointmen
     })
   }
 
-  
+  function handleClick() {
+    setIsClicked(!isClicked)
+  }
 
   function handleUpdateSubmit(event) {
     event.preventDefault()
@@ -64,73 +65,79 @@ function Listing({ home, onHomeDelete, onUpdateHome, appointments, setAppointmen
     <div>
       <br/>
       <div>
-        <img src={image_url} width="320" height="240"/>
-        {address} | Price: ${price} | Square Feet: {square_feet}
+        <img onClick={handleClick} src={image_url} width="320" height="240"/>
         <br/>
-        Appointments: 
-        {home.appointments.length > 0 ?
-          home.appointments.map(appt => {
-            return (
-              <li key={appt.id}>
-                {appt.scheduler} | {appt.time}
-              </li>
-            )
-          })
-          :
-          "No Appointments Scheduled"
-        }
-        {!isUpdate ?
-          <button onClick={handleUpdateButton}>Update</button>
+        {address}
+        {!isClicked ?
+          null
           :
           <div>
-            <form onSubmit={handleUpdateSubmit}>
-              <label>Address: </label>
-              <input
-                type='text'
-                name='address'
-                placeholder={address}
-                onChange={handleChange}
-                value={updatedHome.address}
-              />
-              <label>Price: </label>
-              <input
-                type='text'
-                name='price'
-                placeholder={price}
-                onChange={handleChange}
-                value={updatedHome.price}
-              />
-              <label>Square Feet: </label>
-              <input
-                type='text'
-                name='square_feet'
-                placeholder={square_feet}
-                onChange={handleChange}
-                value={updatedHome.square_feet}
-              />
-              <label>Image URL: </label>
-              <input
-                type='text'
-                name='image_url'
-                placeholder={image_url}
-                onChange={handleChange}
-                value={updatedHome.image_url}
-              />
-              <button>Submit</button>
-            </form>
-            <button onClick={handleUpdateButton}>Hide</button>
+            <h1>Price: ${price} | Square Feet: {square_feet}</h1>
+            Appointments: 
+            {home.appointments.length > 0 ?
+              home.appointments.map(appt => {
+                return (
+                  <li key={appt.id}>
+                    {appt.scheduler} | {appt.time}
+                  </li>
+                )
+              })
+              :
+              "No Appointments Scheduled"
+            }
+            {!isUpdate ?
+              <button onClick={handleUpdateButton}>Update</button>
+              :
+              <div>
+                <form onSubmit={handleUpdateSubmit}>
+                  <label>Address: </label>
+                  <input
+                    type='text'
+                    name='address'
+                    placeholder={address}
+                    onChange={handleChange}
+                    value={updatedHome.address}
+                  />
+                  <label>Price: </label>
+                  <input
+                    type='text'
+                    name='price'
+                    placeholder={price}
+                    onChange={handleChange}
+                    value={updatedHome.price}
+                  />
+                  <label>Square Feet: </label>
+                  <input
+                    type='text'
+                    name='square_feet'
+                    placeholder={square_feet}
+                    onChange={handleChange}
+                    value={updatedHome.square_feet}
+                  />
+                  <label>Image URL: </label>
+                  <input
+                    type='text'
+                    name='image_url'
+                    placeholder={image_url}
+                    onChange={handleChange}
+                    value={updatedHome.image_url}
+                  />
+                  <button>Submit</button>
+                </form>
+                <button onClick={handleUpdateButton}>Hide</button>
+              </div>
+            }
+            <button onClick={handleDelete}>Delete</button>
+            <AppointmentPostForm
+              key={home.id}
+              home={home}
+              appointments={appointments}
+              setAppointments={setAppointments}
+              agents={agents}
+            />
           </div>
-
         }
-        <button onClick={handleDelete}>Delete</button>
       </div>
-      <AppointmentPostForm
-        key={home.id}
-        home={home}
-        appointments={appointments}
-        setAppointments={setAppointments}
-        agents={agents}
-      />
     </div>
   )
 }
