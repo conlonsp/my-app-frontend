@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
 
-function AppointmentPostForm({ appointments, setAppointments }) {
+function AppointmentPostForm({ appointments, setAppointments, home, agents }) {
   const [showForm, setShowForm] = useState(false)
   const [createAppointment, setCreateAppointment] = useState({
     scheduler: '',
     time: '',
-    home_id: '',
+    home_id: home.id,
     agent_id: '',
   })
+  console.log(home)
 
   function handleChange(event) {
     setCreateAppointment({
@@ -69,22 +70,17 @@ function AppointmentPostForm({ appointments, setAppointments }) {
               onChange={handleChange}
               value={createAppointment.time}
             />
-            <label>Home ID: </label>
-            <input
-              type='text'
-              name='home_id'
-              placeholder='ex: 7'
-              onChange={handleChange}
-              value={createAppointment.home_id}
-            />
-            <label>Agent ID: </label>
-            <input
+            <label>Agent: </label>
+            <select>
+
+            </select>
+            {/* <input
               type='text'
               name='agent_id'
               placeholder='ex: 13'
               onChange={handleChange}
               value={createAppointment.agent_id}
-            />
+            /> */}
             <button>Submit</button>
           </form>
           <button onClick={handleShowForm}>Hide</button>

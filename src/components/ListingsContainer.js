@@ -2,7 +2,7 @@ import React from 'react'
 import Listing from './Listing'
 import ListingPostForm from './ListingPostForm'
 
-function ListingsContainer({ homes, setHomes }) {
+function ListingsContainer({ homes, setHomes, appointments, setAppointments, agents }) {
   
   function handleUpdateHome(updatedHomeObj) {
     const updatedHomes = homes.map(home => {
@@ -32,6 +32,9 @@ function ListingsContainer({ homes, setHomes }) {
             homes={homes}
             setHomes={setHomes}
             onUpdateHome={handleUpdateHome}
+            appointments={appointments}
+            setAppointments={setAppointments}
+            agents={agents}
           />
         )
       })}

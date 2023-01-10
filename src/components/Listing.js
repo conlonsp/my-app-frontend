@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import AppointmentPostForm from './AppointmentPostForm'
 
 
-function Listing({ home, onHomeDelete, onUpdateHome }) {
+function Listing({ home, onHomeDelete, onUpdateHome, appointments, setAppointments, agents }) {
   const { id, address, price, square_feet, image_url, } = home
 
   const [isUpdate, setIsUpdate] = useState(false)
@@ -121,8 +121,10 @@ function Listing({ home, onHomeDelete, onUpdateHome }) {
         <button onClick={handleDelete}>Delete</button>
       </div>
       <AppointmentPostForm
-        // appointments={appointments}
-        // setAppointments={setAppointments}
+        home={home}
+        appointments={appointments}
+        setAppointments={setAppointments}
+        agents={agents}
       />
     </div>
   )

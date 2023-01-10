@@ -42,6 +42,8 @@ function App() {
             homes={homes}
             setHomes={setHomes}
             appointments={appointments}
+            setAppointments={setAppointments}
+            agents={agents}
           />
         </Route>
         <Route path='/agents'>
