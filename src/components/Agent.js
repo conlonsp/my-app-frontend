@@ -26,6 +26,7 @@ function Agent({ agent, onAgentDelete }) {
           Email: {email}
           <br/>
           Phone: {phone_number}
+          <br/>
           <button onClick={handleDelete}>Delete</button>
           <br/>
         </div>
