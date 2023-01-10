@@ -1,5 +1,6 @@
 import React from 'react'
 import Agent from './Agent'
+import AgentPostForm from './AgentPostForm'
 
 function AgentsContainer({ agents, setAgents }) {
   
@@ -16,6 +17,7 @@ function AgentsContainer({ agents, setAgents }) {
           <Agent key={agent.id} agent={agent} onAgentDelete={handleAgentDelete} />
         )
       })}
+      <AgentPostForm agents={agents} setAgents={setAgents} />
     </div>
   )
 }
