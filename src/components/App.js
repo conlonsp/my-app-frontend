@@ -49,7 +49,7 @@ function App() {
           <AgentsContainer agents={agents} setAgents={setAgents} />
         </Route>
         <Route exact path='/'>
-          <HomePage homes={homes} />
+          <HomePage agents={agents} homes={homes} />
         </Route>
       </Switch>
       {/* 
