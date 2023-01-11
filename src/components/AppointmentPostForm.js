@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Card } from '@mui/material'
 
 function AppointmentPostForm({ appointments, setAppointments, home, agents }) {
   const [showForm, setShowForm] = useState(false)
@@ -8,7 +9,6 @@ function AppointmentPostForm({ appointments, setAppointments, home, agents }) {
     home_id: home.id,
     agent_id: 1,
   })
-  //console.log(home)
 
   function handleInputChange(event) {
     setCreateAppointment({
@@ -52,7 +52,7 @@ function AppointmentPostForm({ appointments, setAppointments, home, agents }) {
       {!showForm ?
         <button onClick={handleShowForm}>Schedule Appt</button>
         :
-        <div>
+        <Card>
           <h2>Schedule an Appointment</h2>
           <form onSubmit={handleSubmit}>
             <label>Your Name: </label>
@@ -84,7 +84,7 @@ function AppointmentPostForm({ appointments, setAppointments, home, agents }) {
             <button>Submit</button>
           </form>
           <button onClick={handleShowForm}>Hide</button>
-        </div>
+        </Card>
       }
     </div>
   )
