@@ -21,7 +21,7 @@ function HomePage({ agents }) {
       <div id='listing-brokerage-div'>
         <div id='new-listing-div'>
           <h1>Check out our newest listing!</h1>
-          <img src={lastHome.image_url}/>
+          <img src={lastHome.image_url} alt='last posted home'/>
           <p>{lastHome.address}</p>
           <p>${lastHome.price} | {lastHome.square_feet}sf</p>
         </div>

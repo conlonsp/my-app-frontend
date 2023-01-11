@@ -67,14 +67,15 @@ function Listing({ home, onHomeDelete, onUpdateHome, appointments, setAppointmen
     <div className='listing-div'>
       <br/>
       <div>
-        <img onClick={handleClick} src={image_url} width="320" height="240"/>
         <br/>
-        {address}
+        
         {!isClicked ?
-          null
+          <Card>
+            <img onClick={handleClick} src={image_url}  alt='home' display='radius' width="320" height="240"/>
+          </Card>
           :
-          <div>
-            <h1>Price: ${price} | Square Feet: {square_feet}</h1>
+          <Card>
+            <h2>Price: ${price} | Square Feet: {square_feet}</h2>
             Appointments: 
             {home.appointments.length > 0 ?
               home.appointments.map(appt => {
@@ -88,7 +89,7 @@ function Listing({ home, onHomeDelete, onUpdateHome, appointments, setAppointmen
               "No Appointments Scheduled"
             }
             {!isUpdate ?
-              <button onClick={handleUpdateButton}>Update</button>
+              <button onClick={handleUpdateButton}>✏️</button>
               :
               <div>
                 <form onSubmit={handleUpdateSubmit}>
@@ -129,7 +130,7 @@ function Listing({ home, onHomeDelete, onUpdateHome, appointments, setAppointmen
                 <button onClick={handleUpdateButton}>Hide</button>
               </div>
             }
-            <button onClick={handleDelete}>Delete</button>
+            <button onClick={handleDelete}>❌</button>
             <AppointmentPostForm
               key={home.id}
               home={home}
@@ -137,8 +138,9 @@ function Listing({ home, onHomeDelete, onUpdateHome, appointments, setAppointmen
               setAppointments={setAppointments}
               agents={agents}
             />
-          </div>
+          </Card>
         }
+        {address}
       </div>
     </div>
   )
