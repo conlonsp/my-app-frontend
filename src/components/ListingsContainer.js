@@ -22,7 +22,10 @@ function ListingsContainer({ homes, setHomes, appointments, setAppointments, age
 
   return (
     <div className='item3'>
-      <h2>Listings</h2>
+      <h2>Check Out Our Current Listings</h2>
+      <div id='listing-form-div'>
+        <ListingPostForm homes={homes} setHomes={setHomes} />
+      </div>
       {homes.map(home => {
         return (
           <Listing
@@ -38,7 +41,7 @@ function ListingsContainer({ homes, setHomes, appointments, setAppointments, age
           />
         )
       })}
-      <ListingPostForm homes={homes} setHomes={setHomes} />
+      
     </div>
   )
 }
