@@ -12,7 +12,10 @@ function HomePage() {
   return (
     <div>
       <div>
-        <h1>Welcome!</h1>
+        <h1>Welcome Homies!</h1>
+        <p>
+          This is the place to get all of your real estate needs accomplished!  Post your home for sale, schedule a showing, link up with real estate agents are all possible here!
+        </p>
       </div>
       <div>
         <img src={lastHome.image_url}/>
