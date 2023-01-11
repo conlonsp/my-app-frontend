@@ -4,7 +4,7 @@ import {Route, Switch} from 'react-router-dom'
 import Header from './Header'
 import ListingsContainer from './ListingsContainer'
 import AgentsContainer from './AgentsContainer'
-import Home from './Home'
+import HomePage from './HomePage'
 import AppointmentContainer from './AppointmentContainer'
 
 import '../App.css';
@@ -49,7 +49,7 @@ function App() {
           <AgentsContainer agents={agents} setAgents={setAgents} />
         </Route>
         <Route exact path='/'>
-          <Home homes={homes} />
+          <HomePage homes={homes} />
         </Route>
       </Switch>
       {/* 
