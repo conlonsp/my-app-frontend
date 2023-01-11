@@ -5,7 +5,7 @@ import Header from './Header'
 import ListingsContainer from './ListingsContainer'
 import AgentsContainer from './AgentsContainer'
 import HomePage from './HomePage'
-import AppointmentContainer from './AppointmentContainer'
+
 
 import '../App.css';
 
@@ -52,15 +52,6 @@ function App() {
           <HomePage agents={agents} homes={homes} />
         </Route>
       </Switch>
-      {/* 
-      
-      
-      <AppointmentContainer
-        appointments={appointments}
-        setAppointments={setAppointments}
-        homes={homes}
-      />
-      <AgentsContainer agents={agents} setAgents={setAgents} /> */}
     </div>
   );
 }
