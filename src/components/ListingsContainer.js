@@ -1,8 +1,9 @@
 import React from 'react'
 import Listing from './Listing'
 import ListingPostForm from './ListingPostForm'
+import { Card } from 'semantic-ui-react'
 
-function ListingsContainer({ homes, setHomes, appointments, setAppointments, agents }) {
+function ListingsContainer({ homes, setHomes, agents, appointments, setAppointments }) {
   
   function handleUpdateHome(updatedHomeObj) {
     const updatedHomes = homes.map(home => {
@@ -20,6 +21,8 @@ function ListingsContainer({ homes, setHomes, appointments, setAppointments, age
     setHomes(updatedHomes)
   }
 
+  
+
   return (
     <div className='item3'>
       <h2>Check Out Our Current Listings</h2>
@@ -28,17 +31,21 @@ function ListingsContainer({ homes, setHomes, appointments, setAppointments, age
       </div>
       {homes.map(home => {
         return (
-          <Listing
-            key={home.id}
-            home={home}
-            onHomeDelete={handleHomeDelete}
-            homes={homes}
-            setHomes={setHomes}
-            onUpdateHome={handleUpdateHome}
-            appointments={appointments}
-            setAppointments={setAppointments}
-            agents={agents}
-          />
+          <Card.Group itemsPerRow={5} >
+            <Card>
+            <Listing
+              key={home.id}
+              home={home}
+              onHomeDelete={handleHomeDelete}
+             
+              setHomes={setHomes}
+              onUpdateHome={handleUpdateHome}
+              appointments={appointments}
+              setAppointments={setAppointments}
+              agents={agents}
+            />
+            </Card>
+          </Card.Group>
         )
       })}
       

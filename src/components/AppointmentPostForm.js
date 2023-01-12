@@ -25,7 +25,7 @@ function AppointmentPostForm({ appointments, setAppointments, home, agents }) {
       home_id: createAppointment.home_id,
       agent_id: createAppointment.agent_id
     }
-    fetch("http://localhost:9492/appointments", {
+    fetch(`http://localhost:9492/appointments`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -40,7 +40,6 @@ function AppointmentPostForm({ appointments, setAppointments, home, agents }) {
       home_id: home.id,
       agent_id: 1,
     })
-    console.log(home.appointments)
   }
 
   function handleShowForm() {

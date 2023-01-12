@@ -1,10 +1,15 @@
 import React, { useState } from 'react'
 import AppointmentPostForm from './AppointmentPostForm'
-import { Card } from '@mui/material'
+import { Card } from 'semantic-ui-react'
+//import 'semantic-ui-css/semantic.min.css'
+
+
+
 
 
 
 function Listing({ home, onHomeDelete, onUpdateHome, appointments, setAppointments, agents }) {
+
   const { id, address, price, square_feet, image_url, } = home
 
   const [isClicked, setIsClicked] = useState(false)
@@ -15,6 +20,8 @@ function Listing({ home, onHomeDelete, onUpdateHome, appointments, setAppointmen
     square_feet: square_feet,
     image_url: image_url
   })
+
+  const updatedAppts = appointments.filter(appt => appt.home_id === home.id)
   
   function handleDelete() {
     fetch(`http://localhost:9492/homes/${id}`, {
@@ -36,6 +43,11 @@ function Listing({ home, onHomeDelete, onUpdateHome, appointments, setAppointmen
 
   function handleClick() {
     setIsClicked(!isClicked)
+  }
+
+  function handleUpdateHomeAppts(id) {
+    const updatedHomeAppts = appointments.filter(appt => appt.home_id === id)
+    setAppointments(updatedHomeAppts)
   }
 
   function handleUpdateSubmit(event) {
@@ -65,7 +77,10 @@ function Listing({ home, onHomeDelete, onUpdateHome, appointments, setAppointmen
 
   return (
     <div className='listing-div'>
-      <br/>
+      {/* <Card.Group itemsPerRow={5}>
+        <Card image={image_url}/>
+      </Card.Group> */}
+        
       <div>
         <br/>
         
@@ -74,11 +89,11 @@ function Listing({ home, onHomeDelete, onUpdateHome, appointments, setAppointmen
             <img onClick={handleClick} src={image_url}  alt='home' display='radius' width="320" height="240"/>
           </Card>
           :
-          <Card>
+          <div>
             <h2>Price: ${price} | Square Feet: {square_feet}</h2>
             Appointments: 
-            {home.appointments.length > 0 ?
-              home.appointments.map(appt => {
+            {updatedAppts.length > 0 ?
+              updatedAppts.map(appt => {
                 return (
                   <li key={appt.id}>
                     {appt.scheduler} | {appt.time}
@@ -137,8 +152,9 @@ function Listing({ home, onHomeDelete, onUpdateHome, appointments, setAppointmen
               appointments={appointments}
               setAppointments={setAppointments}
               agents={agents}
+              onUpdateHomeAppts={handleUpdateHomeAppts}
             />
-          </Card>
+          </div>
         }
         {address}
       </div>

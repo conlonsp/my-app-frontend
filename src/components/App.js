@@ -14,11 +14,15 @@ function App() {
   const [agents, setAgents] = useState([])
   const [appointments, setAppointments] = useState([])
 
+  // const updatedAppointments = homes.map(home => {
+  //   appointments.filter(appt => appt.home_id === home.id)
+  // })
+
   useEffect(() => {
     fetch("http://localhost:9492/homes")
     .then(r => r.json())
     .then(data => setHomes(data))
-  }, [appointments, homes])
+  }, [])
 
   useEffect(() => {
     fetch("http://localhost:9492/agents")
