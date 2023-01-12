@@ -1,29 +1,26 @@
-/* .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-} */
-
 .App-header {
   background-color: #282c34;
+  width: 100%;
+  height: 120px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: center; */
-  /* font-size: calc(10px + 2vmin); */
   color: white;
 }
 
-.listing-div {
+div#title {
+  padding: none;
+  size: 100px;
+}
+
+div#subtitle {
+  padding: 1px;
+}
+
+
+
+/* .listing-div {
   width: 20%;
   float: left;
 }
@@ -42,43 +39,20 @@
   margin-right: 10%;
   float: right;
   text-align: start;
+} */
+
+/* .ui.raised.card.listing {
+  width: 50%;
+  height: 50%;
+} */
+
+.listing-image {
+  width: 100%;
+  height: 100%;
 }
 
 /* .App-link {
   color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-.item1 { grid-area: header; }
-.item2 { grid-area: left; }
-.item3 { grid-area: main; }
-.item4 { grid-area: right; }
-.item5 { grid-area: footer1; }
-.item6 { grid-area: footer2; }
-.item7 { grid-area: footer3; }
-
-.grid-container {
-  display: grid;
-  grid-template-areas:
-    'header header header header header header'
-    'left main main main main right'
-    'footer1 footer1 footer2 footer2 footer3 footer3';
-  gap: 5px;
-  background-color: darkslategray;
-  padding: 10px;
-}
-
-.grid-container > div {
-  background-color: slategray;
-  text-align: center;
-  padding: 20px 0;
-  font-size: 30px;
 } */
+
+

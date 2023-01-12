@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import AppointmentPostForm from './AppointmentPostForm'
-import { Card } from 'semantic-ui-react'
+import { Card, Image } from 'semantic-ui-react'
 //import 'semantic-ui-css/semantic.min.css'
 
 
@@ -76,89 +76,91 @@ function Listing({ home, onHomeDelete, onUpdateHome, appointments, setAppointmen
   }
 
   return (
-    <div className='listing-div'>
-      {/* <Card.Group itemsPerRow={5}>
-        <Card image={image_url}/>
-      </Card.Group> */}
+    <Card className='listing'>
+      <Image src={image_url} className='listing-image'/>
+    </Card>
+    // <div className='listing-div'>
+    //   {/* <Card.Group itemsPerRow={5}>
+    //     <Card image={image_url}/>
+    //   </Card.Group> */}
         
-      <div>
-        <br/>
-        
-        {!isClicked ?
-          <Card>
-            <img onClick={handleClick} src={image_url}  alt='home' display='radius' width="320" height="240"/>
-          </Card>
-          :
-          <div>
-            <h2>Price: ${price} | Square Feet: {square_feet}</h2>
-            Appointments: 
-            {updatedAppts.length > 0 ?
-              updatedAppts.map(appt => {
-                return (
-                  <li key={appt.id}>
-                    {appt.scheduler} | {appt.time}
-                  </li>
-                )
-              })
-              :
-              "No Appointments Scheduled"
-            }
-            {!isUpdate ?
-              <button onClick={handleUpdateButton}>✏️</button>
-              :
-              <div>
-                <form onSubmit={handleUpdateSubmit}>
-                  <label>Address: </label>
-                  <input
-                    type='text'
-                    name='address'
-                    placeholder={address}
-                    onChange={handleChange}
-                    value={updatedHome.address}
-                  />
-                  <label>Price: </label>
-                  <input
-                    type='text'
-                    name='price'
-                    placeholder={price}
-                    onChange={handleChange}
-                    value={updatedHome.price}
-                  />
-                  <label>Square Feet: </label>
-                  <input
-                    type='text'
-                    name='square_feet'
-                    placeholder={square_feet}
-                    onChange={handleChange}
-                    value={updatedHome.square_feet}
-                  />
-                  <label>Image URL: </label>
-                  <input
-                    type='text'
-                    name='image_url'
-                    placeholder={image_url}
-                    onChange={handleChange}
-                    value={updatedHome.image_url}
-                  />
-                  <button>Submit</button>
-                </form>
-                <button onClick={handleUpdateButton}>Hide</button>
-              </div>
-            }
-            <button onClick={handleDelete}>❌</button>
-            <AppointmentPostForm
-              key={home.id}
-              home={home}
-              appointments={appointments}
-              setAppointments={setAppointments}
-              agents={agents}
-              onUpdateHomeAppts={handleUpdateHomeAppts}
-            />
-          </div>
-        }
-        {address}
-      </div>
-    </div>
+    //   <div>
+    //     <br/>
+    //     {!isClicked ?
+    //       <Card>
+    //         <img onClick={handleClick} src={image_url}  alt='home' display='radius' width="320" height="240"/>
+    //       </Card>
+    //       :
+    //       <div>
+    //         <h2>Price: ${price} | Square Feet: {square_feet}</h2>
+    //         Appointments: 
+    //         {updatedAppts.length > 0 ?
+    //           updatedAppts.map(appt => {
+    //             return (
+    //               <li key={appt.id}>
+    //                 {appt.scheduler} | {appt.time}
+    //               </li>
+    //             )
+    //           })
+    //           :
+    //           "No Appointments Scheduled"
+    //         }
+    //         {!isUpdate ?
+    //           <button onClick={handleUpdateButton}>✏️</button>
+    //           :
+    //           <div>
+    //             <form onSubmit={handleUpdateSubmit}>
+    //               <label>Address: </label>
+    //               <input
+    //                 type='text'
+    //                 name='address'
+    //                 placeholder={address}
+    //                 onChange={handleChange}
+    //                 value={updatedHome.address}
+    //               />
+    //               <label>Price: </label>
+    //               <input
+    //                 type='text'
+    //                 name='price'
+    //                 placeholder={price}
+    //                 onChange={handleChange}
+    //                 value={updatedHome.price}
+    //               />
+    //               <label>Square Feet: </label>
+    //               <input
+    //                 type='text'
+    //                 name='square_feet'
+    //                 placeholder={square_feet}
+    //                 onChange={handleChange}
+    //                 value={updatedHome.square_feet}
+    //               />
+    //               <label>Image URL: </label>
+    //               <input
+    //                 type='text'
+    //                 name='image_url'
+    //                 placeholder={image_url}
+    //                 onChange={handleChange}
+    //                 value={updatedHome.image_url}
+    //               />
+    //               <button>Submit</button>
+    //             </form>
+    //             <button onClick={handleUpdateButton}>Hide</button>
+    //           </div>
+    //         }
+    //         <button onClick={handleDelete}>❌</button>
+    //         <AppointmentPostForm
+    //           key={home.id}
+    //           home={home}
+    //           appointments={appointments}
+    //           setAppointments={setAppointments}
+    //           agents={agents}
+    //           onUpdateHomeAppts={handleUpdateHomeAppts}
+    //         />
+    //       </div>
+    //     }
+    //     {address}
+    //   </div>
+    // </div>
   )
 }
 

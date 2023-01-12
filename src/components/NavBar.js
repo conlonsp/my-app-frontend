@@ -5,8 +5,10 @@ function NavBar() {
 
   const linkStyles = {
     display: "inline-block",
-    width: "50px",
-    padding: "12px",
+    alignContent: 'center',
+    width: "75px",
+    textAlign: 'center',
+    padding: "3px",
     margin: "0 6px 6px",
     background: "white",
     textDecoration: "none",
@@ -14,7 +16,7 @@ function NavBar() {
   };
 
   return (
-    <div>
+    <div style={{padding: '25px'}}>
       <NavLink 
         to='/'
         exact

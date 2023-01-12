@@ -29,26 +29,22 @@ function ListingsContainer({ homes, setHomes, agents, appointments, setAppointme
       <div id='listing-form-div'>
         <ListingPostForm homes={homes} setHomes={setHomes} />
       </div>
+      <Card.Group itemsPerRow={5}>
       {homes.map(home => {
         return (
-          <Card.Group itemsPerRow={5} >
-            <Card>
             <Listing
               key={home.id}
               home={home}
               onHomeDelete={handleHomeDelete}
-             
               setHomes={setHomes}
               onUpdateHome={handleUpdateHome}
               appointments={appointments}
               setAppointments={setAppointments}
               agents={agents}
             />
-            </Card>
-          </Card.Group>
         )
       })}
-      
+      </Card.Group>
     </div>
   )
 }
