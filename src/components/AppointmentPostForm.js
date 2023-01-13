@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Card } from '@mui/material'
+import { Card, Button, Form } from 'semantic-ui-react'
 
 function AppointmentPostForm({ appointments, setAppointments, home, agents }) {
   const [showForm, setShowForm] = useState(false)
@@ -47,13 +47,13 @@ function AppointmentPostForm({ appointments, setAppointments, home, agents }) {
   }
 
   return (
-    <div className='item5'>
+    <div style={{textAlign: 'center'}}>
       {!showForm ?
-        <button onClick={handleShowForm}>Schedule Appt</button>
+        <Button onClick={handleShowForm}>Schedule Appt</Button>
         :
-        <Card>
+        <Card style={{textAlign: 'center', width: '100%'}}>
           <h2>Schedule an Appointment</h2>
-          <form onSubmit={handleSubmit}>
+          <Form onSubmit={handleSubmit}>
             <label>Your Name: </label>
             <input
               type='text'
@@ -80,9 +80,9 @@ function AppointmentPostForm({ appointments, setAppointments, home, agents }) {
                 )
               })}
             </select>
-            <button>Submit</button>
-          </form>
-          <button onClick={handleShowForm}>Hide</button>
+            <Button style={{width: '100%'}} color='green'>Submit</Button>
+          </Form>
+          <Button onClick={handleShowForm} color='google plus'>Hide</Button>
         </Card>
       }
     </div>

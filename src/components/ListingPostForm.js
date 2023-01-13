@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import {Button, Form} from 'semantic-ui-react'
 
 function ListingPostForm({ homes, setHomes }) {
   const [showForm, setShowForm] = useState(false)
@@ -40,13 +41,15 @@ function ListingPostForm({ homes, setHomes }) {
   }
 
   return (
-    <div className='item6'>
+    <div className='ui two buttons' style={{color: 'white'}}>
       {!showForm ?
-      <button onClick={handleShowForm}>Post Listing</button>
+      <Button onClick={handleShowForm} color='linkedin'>Post a Listing</Button>
       :
-      <div>
+      <div style={{width: '50%'}}>
         <h2>Post a Listing</h2>
-        <form onSubmit={handleSubmit}>
+        <Button style={{width: '100%', contentAlign: 'center', textAlign: 'center'}} onClick={handleShowForm} color='google plus'>Hide</Button>
+        <Form onSubmit={handleSubmit}>
+          <br/>
           <label>Address: </label>
           <input
             type='text'
@@ -79,9 +82,9 @@ function ListingPostForm({ homes, setHomes }) {
             value={createListing.image_url}
             onChange={handleChange}
           />
-          <button>Submit</button>
-        </form>
-        <button onClick={handleShowForm}>Hide</button>
+          <Button style={{width: '100%', textAlign: 'center'}} color="green">Submit</Button>
+        </Form>
+        
       </div>
       }
     </div>

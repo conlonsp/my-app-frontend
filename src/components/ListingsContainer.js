@@ -24,12 +24,12 @@ function ListingsContainer({ homes, setHomes, agents, appointments, setAppointme
   
 
   return (
-    <div className='item3'>
-      <h2>Check Out Our Current Listings</h2>
+    <div>
       <div id='listing-form-div'>
         <ListingPostForm homes={homes} setHomes={setHomes} />
       </div>
-      <Card.Group itemsPerRow={5}>
+      <br/>
+      <Card.Group itemsPerRow={5} >
       {homes.map(home => {
         return (
             <Listing

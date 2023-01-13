@@ -1,7 +1,8 @@
 import React, {useState} from 'react'
+import {Card, Image, Segment} from 'semantic-ui-react'
 
 function Agent({ agent, onAgentDelete }) {
-  const {id, name, brokerage, email, phone_number} = agent
+  const {id, name, brokerage, email, phone_number, profile_pic} = agent
 
   const [isClicked, setIsClicked] = useState(false)
 
@@ -17,10 +18,28 @@ function Agent({ agent, onAgentDelete }) {
   }
 
   return (
-    <div>
-      <h1 onClick={handleClick}>🧳 {name}</h1>
-      {isClicked ?
-        <div>
+    <Card>
+      <Segment.Group>
+        <Segment>
+          <div>
+            <Image src={profile_pic} avatar />
+            <span className='username'>{name}</span>
+            <span className='username' style={{float: 'right'}}>{brokerage}</span>
+            <Segment>
+              <div className='contact-info'>
+                <Card.Meta>{phone_number}</Card.Meta>
+                <Card.Meta>{email}</Card.Meta>
+              </div>
+            </Segment>
+          </div>
+        </Segment>
+      </Segment.Group>
+      {/* <Image
+        src={profile_pic}
+        avatar
+      />
+      <span className='username'>{name}</span> */}
+        {/* <div>
           Brokerage: {brokerage}
           <br/>
           Email: {email}
@@ -29,11 +48,8 @@ function Agent({ agent, onAgentDelete }) {
           <br/>
           <button onClick={handleDelete}>Delete</button>
           <br/>
-        </div>
-        :
-        null
-      }
-    </div>
+        </div> */}
+    </Card>
   )
 }
 

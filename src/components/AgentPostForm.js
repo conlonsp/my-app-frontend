@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import {Form, Button} from 'semantic-ui-react'
 
 function AgentPostForm({ agents, setAgents }) {
   const [showForm, setShowForm] = useState(false)
@@ -7,6 +8,7 @@ function AgentPostForm({ agents, setAgents }) {
     brokerage: '',
     email: '',
     phone_number: '',
+    profile_pic: '',
   })
 
   function handleChange(event) {
@@ -23,6 +25,7 @@ function AgentPostForm({ agents, setAgents }) {
       brokerage: createAgent.brokerage,
       email: createAgent.email,
       phone_number: createAgent.phone_number,
+      profile_pic: createAgent.profile_pic,
     }
     fetch("http://localhost:9492/agents", {
       method: 'POST',
@@ -38,6 +41,7 @@ function AgentPostForm({ agents, setAgents }) {
       brokerage: '',
       email: '',
       phone_number: '',
+      profile_pic: '',
     })
   }
 
@@ -48,11 +52,13 @@ function AgentPostForm({ agents, setAgents }) {
   return (
     <div className='item7'>
       {!showForm ?
-        <button onClick={handleShowForm}>Register Agent</button>
+        <Button onClick={handleShowForm} color='linkedin' style={{width: '100%'}}>Register Agent</Button>
         :
-        <div>
+        <div style={{width: '50%'}}>
           <h2>Register an Agent</h2>
-          <form onSubmit={handleSubmit}>
+          <Button onClick={handleShowForm} style={{width: '100%'}} color='google plus'>Hide</Button>
+          <Form onSubmit={handleSubmit}>
+            <br/>
             <label>Agent Name: </label>
             <input
               type='text'
@@ -85,9 +91,17 @@ function AgentPostForm({ agents, setAgents }) {
               onChange={handleChange}
               value={createAgent.phone_number}
             />
-            <button>Submit</button>
-          </form>
-          <button onClick={handleShowForm}>Hide</button>
+            <label>Profile Pic URL: </label>
+            <input
+              type='text'
+              name='profile_pic'
+              placeholder='ex: www.profile-pic.com'
+              onChange={handleChange}
+              value={createAgent.profile_pic}
+            />
+            <Button style={{width: '100%'}} color='green'>Submit</Button>
+          </Form>
+          
         </div>
       }
     </div>

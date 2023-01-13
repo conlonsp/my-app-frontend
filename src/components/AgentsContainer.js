@@ -1,6 +1,7 @@
 import React from 'react'
 import Agent from './Agent'
 import AgentPostForm from './AgentPostForm'
+import {Card} from 'semantic-ui-react'
 
 function AgentsContainer({ agents, setAgents }) {
   
@@ -10,15 +11,17 @@ function AgentsContainer({ agents, setAgents }) {
   }
 
   return (
-    <div className='item4'>
-      <h2>Agents</h2>
-      {agents.map(agent => {
-        return (
-          <Agent key={agent.id} agent={agent} onAgentDelete={handleAgentDelete} />
-        )
-      })}
+     <div className='agent-container'>
       <AgentPostForm agents={agents} setAgents={setAgents} />
-    </div>
+      <br/>
+      <Card.Group itemsPerRow={3}>
+        {agents.map(agent => {
+          return (
+            <Agent key={agent.id} agent={agent} onAgentDelete={handleAgentDelete} />
+          )
+        })}
+      </Card.Group>
+     </div>
   )
 }
 

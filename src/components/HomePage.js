@@ -11,7 +11,7 @@ function HomePage({ agents }) {
 
   
   return (
-    <div>
+    <div id='home'>
       <div id='welcome-div'>
         <h1>Welcome Homies!</h1>
         <p>

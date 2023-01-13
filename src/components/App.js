@@ -37,7 +37,7 @@ function App() {
   }, [])
 
   return (
-    <div className="grid-container">
+    <div className="App">
       <Header />
       <Switch>
         <Route path='/listings'>
