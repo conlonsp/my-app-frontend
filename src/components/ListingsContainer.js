@@ -24,7 +24,7 @@ function ListingsContainer({ homes, setHomes, agents, appointments, setAppointme
   
 
   return (
-    <div>
+    <div className='container'>
       <div id='listing-form-div'>
         <ListingPostForm homes={homes} setHomes={setHomes} />
       </div>

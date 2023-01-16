@@ -11,9 +11,10 @@ function AgentsContainer({ agents, setAgents }) {
   }
 
   return (
-     <div className='agent-container'>
+     <div className='container'>
       <AgentPostForm agents={agents} setAgents={setAgents} />
       <br/>
+      <h1 id='contact-card-title'>Contact Cards</h1>
       <Card.Group itemsPerRow={3}>
         {agents.map(agent => {
           return (

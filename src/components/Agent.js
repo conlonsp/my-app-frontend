@@ -1,10 +1,10 @@
-import React, {useState} from 'react'
-import {Card, Image, Segment} from 'semantic-ui-react'
+import React from 'react'
+import {Card, Image, Segment, Button} from 'semantic-ui-react'
 
 function Agent({ agent, onAgentDelete }) {
   const {id, name, brokerage, email, phone_number, profile_pic} = agent
 
-  const [isClicked, setIsClicked] = useState(false)
+  // const [isClicked, setIsClicked] = useState(false)
 
   function handleDelete() {
     fetch(`http://localhost:9492/agents/${id}`, {
@@ -13,9 +13,9 @@ function Agent({ agent, onAgentDelete }) {
     onAgentDelete(id)
   }
 
-  function handleClick() {
-    setIsClicked(!isClicked)
-  }
+  // function handleClick() {
+  //   setIsClicked(!isClicked)
+  // }
 
   return (
     <Card>
@@ -33,7 +33,12 @@ function Agent({ agent, onAgentDelete }) {
             </Segment>
           </div>
         </Segment>
+        <Button id='agent-delete' onClick={handleDelete} basic color='red'>
+            ❌
+        </Button>
+        <div>...</div>
       </Segment.Group>
+      
       {/* <Image
         src={profile_pic}
         avatar

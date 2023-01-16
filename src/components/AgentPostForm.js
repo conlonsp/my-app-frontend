@@ -52,7 +52,7 @@ function AgentPostForm({ agents, setAgents }) {
   return (
     <div className='item7'>
       {!showForm ?
-        <Button onClick={handleShowForm} color='linkedin' style={{width: '100%'}}>Register Agent</Button>
+        <Button onClick={handleShowForm} color='linkedin' style={{width: '100%'}}>Register an Agent</Button>
         :
         <div style={{width: '50%'}}>
           <h2>Register an Agent</h2>

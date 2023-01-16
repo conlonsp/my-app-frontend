@@ -38,6 +38,12 @@ function ListingPostForm({ homes, setHomes }) {
     })
     .then(r => r.json())
     .then(data => setHomes([...homes, data]))
+    setCreateListing({
+      address: '',
+      price: '',
+      square_feet: '',
+      image_url: '',
+    })
   }
 
   return (

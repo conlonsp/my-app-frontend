@@ -12,7 +12,7 @@ function Listing({ home, onHomeDelete, onUpdateHome, appointments, setAppointmen
 
   const { id, address, price, square_feet, image_url, } = home
 
-  const [isClicked, setIsClicked] = useState(false)
+  // const [isClicked, setIsClicked] = useState(false)
   const [isUpdate, setIsUpdate] = useState(false)
   const [updatedHome, setUpdatedHome] = useState({
     address: address,
@@ -46,9 +46,9 @@ function Listing({ home, onHomeDelete, onUpdateHome, appointments, setAppointmen
     })
   }
 
-  function handleClick() {
-    setIsClicked(!isClicked)
-  }
+  // function handleClick() {
+  //   setIsClicked(!isClicked)
+  // }
 
   function handleUpdateHomeAppts(id) {
     const updatedHomeAppts = appointments.filter(appt => appt.home_id === id)
@@ -92,6 +92,7 @@ function Listing({ home, onHomeDelete, onUpdateHome, appointments, setAppointmen
           height='240px'
           src={image_url}
         />
+        <div>...</div>
         <Card.Header>{street}</Card.Header>
         <Card.Meta>{city}</Card.Meta>
         <Card.Meta>{state}</Card.Meta>
