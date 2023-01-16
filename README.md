@@ -21,12 +21,12 @@ Homies is a Zillow-like app for clients to view, post, update, and delete homes,
 
 ### Appointments
 
-Our appointments panel is appended to the left side of the page.  Appointments include the scheduler name, time, home_id, and agent_id that they will be working with. An appointment can be scheduled at the bottom of the page, underneath the Appointments panel.  Appointments can only be created and destroyed via this app.  You currently cannot update an appointment.
+Appointments can be found within each homes card on the listing page.  Appointments include the scheduler name, appointment time, home id, and the id of the agent that they would like to work with. An appointment can be scheduled within a house card on the listings page.  Appointments can only be created and destroyed via this app.  You currently cannot update an appointment.
 
 ### Listings
 
-The listings panel is appended in the middle of the page.  Our listings have full CRUD capabilities thanks to our Homies app backend.  To post a listing, click the 'post listing' button at the bottom of the page and follow the prompts.
+The listings page can be found via the listings tab in the navigation bar at the top of the page.  Our listings have full CRUD capabilities thanks to our Homies app backend.  To post a listing, click the 'post listing' button at the top of the page and follow the prompts.
 
 ### Agents
 
-The agents panel is the last panel on our app.  This panel shows which agents we have registered on the site, and which agents clients can book showings with.  Like our appointments, agents do not have full CRUD capabilities.  They can only be created, read, and deleted at this time.
+The agents page is the last tab in our app.  This page shows contact cards for the agents we have registered on the site, and which agents clients can book showings with.  Like our appointments, agents do not have full CRUD capabilities.  They can only be created, read, and deleted at this time.
